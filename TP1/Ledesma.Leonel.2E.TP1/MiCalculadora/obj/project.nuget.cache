@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "1bWr+lSnFbx/dEECtHZgJeiIRX9K6H0gefmtHYtyV5cJ51uezs6AgJjMgavnlOfyuaSJG98Nx2HTPYurt4DjhA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP1\\Ledesma.Leonel.2E.TP1\\MiCalculadora\\MiCalculadora.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\leone\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.15\\microsoft.netcore.app.host.win-x64.5.0.15.nupkg.sha512"
+  ],
+  "logs": []
+}
