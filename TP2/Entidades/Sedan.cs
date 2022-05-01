@@ -14,7 +14,7 @@ namespace Entidades
         private ETipo tipo;
 
         /// <summary>
-        /// Por defecto, TIPO será CuatroPuertas
+        /// Constructor de Sedan, inicializando los atributos con los parametros recibidos. Por defecto, TIPO será CuatroPuertas
         /// </summary>
         /// <param name="marca"></param>
         /// <param name="chasis"></param>
@@ -23,8 +23,15 @@ namespace Entidades
             : this(marca, chasis, color, ETipo.CuatroPuertas)
         {
         }
-
-        public Sedan(EMarca marca, string chasis, ConsoleColor color, ETipo tipo) : base(chasis, marca, color)
+        /// <summary>
+        /// Constructor de Sedan, inicializando los atributos con los parametros recibidos. 
+        /// </summary>
+        /// <param name="marca"></param>
+        /// <param name="chasis"></param>
+        /// <param name="color"></param>
+        /// <param name="tipo"></param>
+        public Sedan(EMarca marca, string chasis, ConsoleColor color, ETipo tipo)
+            : base(chasis, marca, color)
         {
             this.tipo = tipo;
         }
@@ -32,14 +39,12 @@ namespace Entidades
         /// <summary>
         /// Sedan son 'Mediano'
         /// </summary>
-        protected override ETamanio Tamanio
-        {
-            get
-            {
-                return ETamanio.Mediano;
-            }
-        }
+        protected override ETamanio Tamanio { get { return ETamanio.Mediano; } }
 
+        /// <summary>
+        /// Descibe todos los datos del Sedan.
+        /// </summary>
+        /// <returns>Retorna la descripcion del Sedan.</returns>
         public override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();

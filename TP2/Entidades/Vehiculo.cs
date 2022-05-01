@@ -11,11 +11,8 @@ namespace Entidades
     /// </summary>
     public abstract class Vehiculo
     {
-        public enum EMarca {Chevrolet, Ford, Renault, Toyota, BMW, Honda, HarleyDavidson}
-        public enum ETamanio
-        {
-            Chico, Mediano, Grande
-        }
+        public enum EMarca { Chevrolet, Ford, Renault, Toyota, BMW, Honda, HarleyDavidson }
+        public enum ETamanio { Chico, Mediano, Grande }
 
         private EMarca marca;
         private string chasis;
@@ -29,38 +26,40 @@ namespace Entidades
         /// <summary>
         /// Publica todos los datos del Vehiculo.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>todos los datos del vehiculo</returns>
         public virtual string Mostrar()
         {
-            StringBuilder sb = new StringBuilder();
-
-            sb.AppendLine($"CHASIS : {this.chasis}");
-            sb.AppendLine($"MARCA : {this.marca}");
-            sb.AppendLine($"COLOR : {this.color}");
-            sb.AppendLine("---------------------");
-            sb.AppendLine("");
-            sb.Append($"TAMAÑO : {this.Tamanio}");
-
-            return sb.ToString();
+            return (string)this;
         }
 
+        /// <summary>
+        /// Constructor publico de Vehiculo. Usando los parametros recibidos para inicializar los atributos.
+        /// </summary>
+        /// <param name="chasis"></param>
+        /// <param name="marca"></param>
+        /// <param name="color"></param>
         public Vehiculo(string chasis, EMarca marca, ConsoleColor color)
         {
             this.chasis = chasis;
             this.marca = marca;
             this.color = color;
         }
-
+        /// <summary>
+        /// Describe al Vehiculo p con su chasis, marca color y tamaño.
+        /// </summary>
+        /// <param name="p"></param>
         public static explicit operator string(Vehiculo p)
-            {
+        {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine($"CHASIS: {p.chasis}\r\n");
-            sb.AppendLine($"MARCA : {p.marca.ToString()}\r\n");
-            sb.AppendLine($"COLOR : {p.color.ToString()}\r\n");
+            sb.AppendLine($"CHASIS: {p.chasis}");
+            sb.AppendLine($"MARCA : {p.marca.ToString()}");
+            sb.AppendLine($"COLOR : {p.color.ToString()}");
             sb.AppendLine("---------------------");
+            sb.AppendLine("");
+            sb.Append($"TAMAÑO : {p.Tamanio}");
 
-               return sb.ToString();
+            return sb.ToString();
         }
 
         /// <summary>
@@ -68,7 +67,7 @@ namespace Entidades
         /// </summary>
         /// <param name="v1"></param>
         /// <param name="v2"></param>
-        /// <returns></returns>
+        /// <returns>True si tienen el mismo chasis, false si no.</returns>
         public static bool operator ==(Vehiculo v1, Vehiculo v2)
         {
             return (v1.chasis == v2.chasis);
@@ -78,7 +77,7 @@ namespace Entidades
         /// </summary>
         /// <param name="v1"></param>
         /// <param name="v2"></param>
-        /// <returns></returns>
+        /// <returns>True si tienen chasis diferentes, false si son iguales.</returns>
         public static bool operator !=(Vehiculo v1, Vehiculo v2)
         {
             return !(v1 == v2);

@@ -13,10 +13,7 @@ namespace Entidades
     {
         List<Vehiculo> vehiculos;
         int espacioDisponible;
-        public enum ETipo
-        {
-            Ciclomotor, Sedan, SUV, Todos
-        }
+        public enum ETipo { Ciclomotor, Sedan, SUV, Todos }
 
         #region "Constructores"
         private Taller()
@@ -36,7 +33,7 @@ namespace Entidades
         /// <returns></returns>
         public override string ToString()
         {
-            return this.Listar(this, ETipo.Todos);
+            return Taller.Listar(this, ETipo.Todos);
         }
         #endregion
 
@@ -49,37 +46,18 @@ namespace Entidades
         /// <param name="taller">Elemento a exponer</param>
         /// <param name="ETipo">Tipos de ítems de la lista a mostrar</param>
         /// <returns></returns>
-        public string Listar(Taller taller, ETipo tipo)
+        public static string Listar(Taller taller, ETipo tipo)
         {
             StringBuilder sb = new StringBuilder();
 
             sb.AppendFormat("Tenemos {0} lugares ocupados de un total de {1} disponibles", taller.vehiculos.Count, taller.espacioDisponible);
             sb.AppendLine("");
             foreach (Vehiculo v in taller.vehiculos)
-            {                
-                switch (tipo)
+            {
+                if (v.GetType().Name.ToLower() == tipo.ToString().ToLower() //En el Enum ETipo figura SUV, por eso implemente esta solucion a ese problema.
+                    || tipo == Taller.ETipo.Todos)
                 {
-                    case ETipo.SUV:
-                        if (v.GetType().Name == "Suv") //En el Enum ETipo figura SUV.
-                        {
-                            sb.AppendLine(v.Mostrar());
-                        }
-                        break;
-                    case ETipo.Ciclomotor:
-                        if (v.GetType().Name == tipo.ToString())
-                        {
-                            sb.AppendLine(v.Mostrar());
-                        }
-                        break;
-                    case ETipo.Sedan:
-                        if (v.GetType().Name == tipo.ToString())
-                        {
-                            sb.AppendLine(v.Mostrar());
-                        }
-                        break;
-                    default:
-                        sb.AppendLine(v.Mostrar());
-                        break;
+                    sb.AppendLine(v.Mostrar());
                 }
             }
 

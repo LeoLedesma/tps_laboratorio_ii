@@ -64,7 +64,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Entidades.Ciclomotor">
-    <Position X="3.75" Y="6.25" Width="4" />
+    <Position X="6.25" Y="6.75" Width="4" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAQAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Ciclomotor.cs</FileName>

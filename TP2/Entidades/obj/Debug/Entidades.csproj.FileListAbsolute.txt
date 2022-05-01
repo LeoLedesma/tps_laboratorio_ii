@@ -23,3 +23,9 @@ C:\Users\Leonel\OneDrive\Escritorio\UTN Programacion\Segundo Cuatri\Programacion
 C:\Users\Leonel\OneDrive\Escritorio\UTN Programacion\Segundo Cuatri\Programacion II\tps_laboratorio_ii\TP2\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\Leonel\OneDrive\Escritorio\UTN Programacion\Segundo Cuatri\Programacion II\tps_laboratorio_ii\TP2\Entidades\obj\Debug\Entidades.dll
 C:\Users\Leonel\OneDrive\Escritorio\UTN Programacion\Segundo Cuatri\Programacion II\tps_laboratorio_ii\TP2\Entidades\obj\Debug\Entidades.pdb
+C:\Users\eledesma\Desktop\Tp leo\tps_laboratorio_ii\TP2\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\eledesma\Desktop\Tp leo\tps_laboratorio_ii\TP2\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\eledesma\Desktop\Tp leo\tps_laboratorio_ii\TP2\Entidades\obj\Debug\Entidades.dll
+C:\Users\eledesma\Desktop\Tp leo\tps_laboratorio_ii\TP2\Entidades\obj\Debug\Entidades.pdb
+C:\Users\eledesma\Desktop\Tp leo\tps_laboratorio_ii\TP2\Entidades\bin\Debug\Entidades.dll
+C:\Users\eledesma\Desktop\Tp leo\tps_laboratorio_ii\TP2\Entidades\bin\Debug\Entidades.pdb

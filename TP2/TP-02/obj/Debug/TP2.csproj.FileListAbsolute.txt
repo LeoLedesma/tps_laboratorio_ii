@@ -8,3 +8,13 @@ C:\Users\Leonel\OneDrive\Escritorio\UTN Programacion\Segundo Cuatri\Programacion
 C:\Users\Leonel\OneDrive\Escritorio\UTN Programacion\Segundo Cuatri\Programacion II\tps_laboratorio_ii\TP2\TP-02\obj\Debug\TP2.csproj.CopyComplete
 C:\Users\Leonel\OneDrive\Escritorio\UTN Programacion\Segundo Cuatri\Programacion II\tps_laboratorio_ii\TP2\TP-02\obj\Debug\TP-02.exe
 C:\Users\Leonel\OneDrive\Escritorio\UTN Programacion\Segundo Cuatri\Programacion II\tps_laboratorio_ii\TP2\TP-02\obj\Debug\TP-02.pdb
+C:\Users\eledesma\Desktop\Tp leo\tps_laboratorio_ii\TP2\TP-02\obj\Debug\TP2.csprojAssemblyReference.cache
+C:\Users\eledesma\Desktop\Tp leo\tps_laboratorio_ii\TP2\TP-02\obj\Debug\TP2.csproj.CoreCompileInputs.cache
+C:\Users\eledesma\Desktop\Tp leo\tps_laboratorio_ii\TP2\TP-02\obj\Debug\TP-02.exe
+C:\Users\eledesma\Desktop\Tp leo\tps_laboratorio_ii\TP2\TP-02\obj\Debug\TP-02.pdb
+C:\Users\eledesma\Desktop\Tp leo\tps_laboratorio_ii\TP2\TP-02\bin\Debug\TP-02.exe.config
+C:\Users\eledesma\Desktop\Tp leo\tps_laboratorio_ii\TP2\TP-02\bin\Debug\TP-02.exe
+C:\Users\eledesma\Desktop\Tp leo\tps_laboratorio_ii\TP2\TP-02\bin\Debug\TP-02.pdb
+C:\Users\eledesma\Desktop\Tp leo\tps_laboratorio_ii\TP2\TP-02\bin\Debug\Entidades.dll
+C:\Users\eledesma\Desktop\Tp leo\tps_laboratorio_ii\TP2\TP-02\bin\Debug\Entidades.pdb
+C:\Users\eledesma\Desktop\Tp leo\tps_laboratorio_ii\TP2\TP-02\obj\Debug\TP2.csproj.CopyComplete
