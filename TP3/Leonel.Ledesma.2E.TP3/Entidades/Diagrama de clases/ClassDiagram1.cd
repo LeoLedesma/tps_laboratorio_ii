@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Entidades.CentroMedico">
+    <Position X="1.5" Y="0.5" Width="4.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAAAAAAACAQAEAoAAgAAIAAAAAQAAAAAAEBiQ=</HashCode>
+      <FileName>CentroMedico.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.Persona">
+    <Position X="0.5" Y="6" Width="7" />
+    <NestedTypes>
+      <Enum Name="Entidades.Persona.eSexo" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Persona.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAISAABCEAACQgAAAgAIAAgACAAIAAgAAAiI=</HashCode>
+      <FileName>Persona.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.Profesional">
+    <Position X="8" Y="6" Width="8.25" />
+    <TypeIdentifier>
+      <HashCode>AAAQEAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Profesional.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.Paciente">
+    <Position X="8.25" Y="9.5" Width="8" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAIAAA=</HashCode>
+      <FileName>Paciente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

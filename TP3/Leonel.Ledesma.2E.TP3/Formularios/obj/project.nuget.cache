@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "AOtpMjXaesfo5ybYsfX5Of04yyTUPnoDJWmFE2jkKdYkV693GXTM6M+ZcEaoNsRBz2wc9au9gR9FWapPfVqU2A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP3\\Leonel.Ledesma.2E.TP3\\Formularios\\Formularios.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\leone\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.15\\microsoft.netcore.app.host.win-x64.5.0.15.nupkg.sha512"
+  ],
+  "logs": []
+}
