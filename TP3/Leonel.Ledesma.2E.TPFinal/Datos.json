@@ -1,0 +1,1558 @@
+{
+  "Nombre": "Centro Medico Ledesma",
+  "Pacientes": [
+    {
+      "ObraSocial": "",
+      "NumeroAfiliado": "",
+      "TelefonoContacto": "1131396060",
+      "Nombre": "juan",
+      "Apellido": "perez",
+      "Edad": 22,
+      "FechaDeNacimiento": "2000-02-10T00:00:00",
+      "Documento": "42396381",
+      "Telefono": "1131396060"
+    },
+    {
+      "ObraSocial": "ante vel ipsum praesent blandit lacinia erat vestibulum sed magna",
+      "NumeroAfiliado": "9204",
+      "TelefonoContacto": "7314284872",
+      "Nombre": "b\u00E9rang\u00E8re",
+      "Apellido": "kemm",
+      "Edad": 2,
+      "FechaDeNacimiento": "2019-11-26T00:00:00",
+      "Documento": "11378109",
+      "Telefono": "6949612459"
+    },
+    {
+      "ObraSocial": "porttitor lorem id ligula suspendisse ornare",
+      "NumeroAfiliado": "8089",
+      "TelefonoContacto": "4106648005",
+      "Nombre": "na\u00E9va",
+      "Apellido": "dominguez",
+      "Edad": 27,
+      "FechaDeNacimiento": "1995-05-03T00:00:00",
+      "Documento": "17422541",
+      "Telefono": "2813430955"
+    },
+    {
+      "ObraSocial": "cursus id turpis integer",
+      "NumeroAfiliado": "4271",
+      "TelefonoContacto": "",
+      "Nombre": "ga\u00E9tane",
+      "Apellido": "schruyer",
+      "Edad": 51,
+      "FechaDeNacimiento": "1971-03-02T00:00:00",
+      "Documento": "29405800",
+      "Telefono": "4824284522"
+    },
+    {
+      "ObraSocial": "adipiscing elit proin risus",
+      "NumeroAfiliado": "5229",
+      "TelefonoContacto": "",
+      "Nombre": "est\u00E8ve",
+      "Apellido": "waison",
+      "Edad": 23,
+      "FechaDeNacimiento": "1999-01-11T00:00:00",
+      "Documento": "16676634",
+      "Telefono": "4253287067"
+    },
+    {
+      "ObraSocial": "morbi a ipsum integer a nibh in",
+      "NumeroAfiliado": "5806",
+      "TelefonoContacto": "",
+      "Nombre": "zh\u00EC",
+      "Apellido": "cartan",
+      "Edad": 37,
+      "FechaDeNacimiento": "1985-02-20T00:00:00",
+      "Documento": "34709116",
+      "Telefono": "1179522239"
+    },
+    {
+      "ObraSocial": "congue risus semper porta volutpat quam",
+      "NumeroAfiliado": "6335",
+      "TelefonoContacto": "",
+      "Nombre": "ma\u00EFly",
+      "Apellido": "passe",
+      "Edad": 70,
+      "FechaDeNacimiento": "1952-03-19T00:00:00",
+      "Documento": "38435838",
+      "Telefono": "5179817668"
+    },
+    {
+      "ObraSocial": "ac lobortis vel dapibus at diam nam tristique",
+      "NumeroAfiliado": "8745",
+      "TelefonoContacto": "7288695738",
+      "Nombre": "r\u00E9jane",
+      "Apellido": "cartmael",
+      "Edad": 38,
+      "FechaDeNacimiento": "1984-05-10T00:00:00",
+      "Documento": "40850561",
+      "Telefono": "4996937453"
+    },
+    {
+      "ObraSocial": "bibendum morbi non quam",
+      "NumeroAfiliado": "4702",
+      "TelefonoContacto": "",
+      "Nombre": "torbj\u00F6rn",
+      "Apellido": "veitch",
+      "Edad": 11,
+      "FechaDeNacimiento": "2011-05-09T00:00:00",
+      "Documento": "48355419",
+      "Telefono": "6019827635"
+    },
+    {
+      "ObraSocial": "in quis justo maecenas rhoncus aliquam lacus morbi",
+      "NumeroAfiliado": "4380",
+      "TelefonoContacto": "5719799008",
+      "Nombre": "lo\u00EFc",
+      "Apellido": "battersby",
+      "Edad": 24,
+      "FechaDeNacimiento": "1997-09-03T00:00:00",
+      "Documento": "31027911",
+      "Telefono": "2579314480"
+    },
+    {
+      "ObraSocial": "quam turpis adipiscing lorem",
+      "NumeroAfiliado": "9371",
+      "TelefonoContacto": "",
+      "Nombre": "aur\u00E9lie",
+      "Apellido": "killner",
+      "Edad": 43,
+      "FechaDeNacimiento": "1978-11-11T00:00:00",
+      "Documento": "31657259",
+      "Telefono": "3638006242"
+    },
+    {
+      "ObraSocial": "nullam molestie nibh in lectus pellentesque at nulla",
+      "NumeroAfiliado": "6470",
+      "TelefonoContacto": "3982444068",
+      "Nombre": "no\u00EBlla",
+      "Apellido": "mease",
+      "Edad": 48,
+      "FechaDeNacimiento": "1974-05-23T00:00:00",
+      "Documento": "37965098",
+      "Telefono": "1714997116"
+    },
+    {
+      "ObraSocial": "quis tortor id nulla ultrices aliquet maecenas",
+      "NumeroAfiliado": "9712",
+      "TelefonoContacto": "6217534481",
+      "Nombre": "h\u00E9l\u00E8ne",
+      "Apellido": "lidgate",
+      "Edad": 8,
+      "FechaDeNacimiento": "2014-02-21T00:00:00",
+      "Documento": "13936554",
+      "Telefono": "6667318276"
+    },
+    {
+      "ObraSocial": "justo in hac habitasse platea",
+      "NumeroAfiliado": "9775",
+      "TelefonoContacto": "6948767829",
+      "Nombre": "doroth\u00E9e",
+      "Apellido": "couttes",
+      "Edad": 7,
+      "FechaDeNacimiento": "2014-12-29T00:00:00",
+      "Documento": "43863443",
+      "Telefono": "1566493781"
+    },
+    {
+      "ObraSocial": "ipsum dolor sit amet consectetuer adipiscing elit proin",
+      "NumeroAfiliado": "4236",
+      "TelefonoContacto": "",
+      "Nombre": "mil\u00E9na",
+      "Apellido": "gingel",
+      "Edad": 23,
+      "FechaDeNacimiento": "1998-12-31T00:00:00",
+      "Documento": "18663414",
+      "Telefono": "3552147810"
+    },
+    {
+      "ObraSocial": "pulvinar lobortis est phasellus sit amet erat nulla tempus",
+      "NumeroAfiliado": "7043",
+      "TelefonoContacto": "5472950907",
+      "Nombre": "t\u00E1ng",
+      "Apellido": "ranvoise",
+      "Edad": 47,
+      "FechaDeNacimiento": "1975-06-20T00:00:00",
+      "Documento": "18014022",
+      "Telefono": "2967028488"
+    },
+    {
+      "ObraSocial": "rutrum at lorem integer tincidunt ante vel ipsum praesent",
+      "NumeroAfiliado": "9181",
+      "TelefonoContacto": "2797158596",
+      "Nombre": "rach\u00E8le",
+      "Apellido": "cosson",
+      "Edad": 67,
+      "FechaDeNacimiento": "1954-09-15T00:00:00",
+      "Documento": "13447196",
+      "Telefono": "9727080578"
+    },
+    {
+      "ObraSocial": "nunc purus phasellus in felis donec semper sapien",
+      "NumeroAfiliado": "5838",
+      "TelefonoContacto": "3382733557",
+      "Nombre": "st\u00E9phanie",
+      "Apellido": "pirnie",
+      "Edad": 28,
+      "FechaDeNacimiento": "1993-11-18T00:00:00",
+      "Documento": "30469840",
+      "Telefono": "6289210712"
+    },
+    {
+      "ObraSocial": "viverra eget congue eget semper rutrum nulla nunc",
+      "NumeroAfiliado": "6945",
+      "TelefonoContacto": "7309698112",
+      "Nombre": "c\u00E9lestine",
+      "Apellido": "morratt",
+      "Edad": 43,
+      "FechaDeNacimiento": "1978-10-14T00:00:00",
+      "Documento": "49241854",
+      "Telefono": "1489307284"
+    },
+    {
+      "ObraSocial": "et magnis dis parturient montes nascetur ridiculus mus etiam vel",
+      "NumeroAfiliado": "5972",
+      "TelefonoContacto": "",
+      "Nombre": "ru\u00F2",
+      "Apellido": "mclanachan",
+      "Edad": 12,
+      "FechaDeNacimiento": "2010-05-23T00:00:00",
+      "Documento": "42117797",
+      "Telefono": "7991473851"
+    },
+    {
+      "ObraSocial": "commodo vulputate justo in blandit",
+      "NumeroAfiliado": "5584",
+      "TelefonoContacto": "7635380655",
+      "Nombre": "kallist\u00E9",
+      "Apellido": "carding",
+      "Edad": 32,
+      "FechaDeNacimiento": "1989-09-07T00:00:00",
+      "Documento": "22767653",
+      "Telefono": "4703772933"
+    },
+    {
+      "ObraSocial": "nulla tempus vivamus in felis eu sapien cursus vestibulum proin",
+      "NumeroAfiliado": "8094",
+      "TelefonoContacto": "",
+      "Nombre": "ma\u00EFt\u00E9",
+      "Apellido": "galton",
+      "Edad": 25,
+      "FechaDeNacimiento": "1996-08-30T00:00:00",
+      "Documento": "39948704",
+      "Telefono": "1448563769"
+    },
+    {
+      "ObraSocial": "sociis natoque penatibus et magnis dis parturient montes nascetur",
+      "NumeroAfiliado": "9403",
+      "TelefonoContacto": "",
+      "Nombre": "b\u00F6rje",
+      "Apellido": "kayser",
+      "Edad": 76,
+      "FechaDeNacimiento": "1945-11-16T00:00:00",
+      "Documento": "45988718",
+      "Telefono": "7625729540"
+    },
+    {
+      "ObraSocial": "in faucibus orci luctus et ultrices",
+      "NumeroAfiliado": "6595",
+      "TelefonoContacto": "",
+      "Nombre": "m\u00E9lanie",
+      "Apellido": "waldie",
+      "Edad": 28,
+      "FechaDeNacimiento": "1993-07-23T00:00:00",
+      "Documento": "14906792",
+      "Telefono": "4998630810"
+    },
+    {
+      "ObraSocial": "imperdiet sapien urna pretium nisl ut",
+      "NumeroAfiliado": "5540",
+      "TelefonoContacto": "",
+      "Nombre": "illustr\u00E9e",
+      "Apellido": "viste",
+      "Edad": 71,
+      "FechaDeNacimiento": "1951-01-01T00:00:00",
+      "Documento": "12402245",
+      "Telefono": "7422928388"
+    },
+    {
+      "ObraSocial": "eget vulputate ut ultrices vel augue vestibulum ante",
+      "NumeroAfiliado": "7379",
+      "TelefonoContacto": "6058743110",
+      "Nombre": "lo\u00EFs",
+      "Apellido": "von nassau",
+      "Edad": 43,
+      "FechaDeNacimiento": "1979-04-20T00:00:00",
+      "Documento": "21477183",
+      "Telefono": "1164852536"
+    },
+    {
+      "ObraSocial": "odio donec vitae nisi nam ultrices libero non",
+      "NumeroAfiliado": "6843",
+      "TelefonoContacto": "",
+      "Nombre": "r\u00E9becca",
+      "Apellido": "casajuana",
+      "Edad": 56,
+      "FechaDeNacimiento": "1966-02-15T00:00:00",
+      "Documento": "42355807",
+      "Telefono": "6078137825"
+    },
+    {
+      "ObraSocial": "cras non velit nec nisi vulputate nonummy maecenas tincidunt",
+      "NumeroAfiliado": "7737",
+      "TelefonoContacto": "",
+      "Nombre": "cr\u00E9\u00E9z",
+      "Apellido": "whitechurch",
+      "Edad": 64,
+      "FechaDeNacimiento": "1957-10-26T00:00:00",
+      "Documento": "14238955",
+      "Telefono": "6189219041"
+    },
+    {
+      "ObraSocial": "in felis eu sapien cursus vestibulum proin",
+      "NumeroAfiliado": "9364",
+      "TelefonoContacto": "8112330207",
+      "Nombre": "l\u00F3ng",
+      "Apellido": "newey",
+      "Edad": 39,
+      "FechaDeNacimiento": "1983-01-29T00:00:00",
+      "Documento": "34599737",
+      "Telefono": "1886320238"
+    },
+    {
+      "ObraSocial": "metus aenean fermentum donec ut mauris eget massa tempor convallis",
+      "NumeroAfiliado": "7743",
+      "TelefonoContacto": "",
+      "Nombre": "l\u00E9andre",
+      "Apellido": "worssam",
+      "Edad": 39,
+      "FechaDeNacimiento": "1982-12-09T00:00:00",
+      "Documento": "28412924",
+      "Telefono": "7102043328"
+    },
+    {
+      "ObraSocial": "aenean fermentum donec ut",
+      "NumeroAfiliado": "8044",
+      "TelefonoContacto": "",
+      "Nombre": "ma\u00EFly",
+      "Apellido": "klewi",
+      "Edad": 71,
+      "FechaDeNacimiento": "1950-08-15T00:00:00",
+      "Documento": "42209499",
+      "Telefono": "9422490082"
+    },
+    {
+      "ObraSocial": "massa donec dapibus duis at velit",
+      "NumeroAfiliado": "6132",
+      "TelefonoContacto": "",
+      "Nombre": "m\u00E9diamass",
+      "Apellido": "luggar",
+      "Edad": 48,
+      "FechaDeNacimiento": "1974-03-22T00:00:00",
+      "Documento": "29087873",
+      "Telefono": "3552392590"
+    },
+    {
+      "ObraSocial": "mi pede Masculinosuada in imperdiet et commodo vulputate justo in",
+      "NumeroAfiliado": "7646",
+      "TelefonoContacto": "8478829694",
+      "Nombre": "illustr\u00E9e",
+      "Apellido": "grinston",
+      "Edad": 26,
+      "FechaDeNacimiento": "1995-07-07T00:00:00",
+      "Documento": "33118214",
+      "Telefono": "5583842367"
+    },
+    {
+      "ObraSocial": "quam nec dui luctus rutrum nulla tellus in",
+      "NumeroAfiliado": "8374",
+      "TelefonoContacto": "",
+      "Nombre": "fr\u00E9d\u00E9rique",
+      "Apellido": "labat",
+      "Edad": 53,
+      "FechaDeNacimiento": "1968-12-18T00:00:00",
+      "Documento": "35800281",
+      "Telefono": "6374603381"
+    },
+    {
+      "ObraSocial": "nonummy maecenas tincidunt lacus",
+      "NumeroAfiliado": "6612",
+      "TelefonoContacto": "1006651693",
+      "Nombre": "marie-\u00E8ve",
+      "Apellido": "macclenan",
+      "Edad": 47,
+      "FechaDeNacimiento": "1975-01-05T00:00:00",
+      "Documento": "17464886",
+      "Telefono": "6184246405"
+    },
+    {
+      "ObraSocial": "pede posuere nonummy integer non velit",
+      "NumeroAfiliado": "6745",
+      "TelefonoContacto": "",
+      "Nombre": "r\u00E9becca",
+      "Apellido": "crich",
+      "Edad": 73,
+      "FechaDeNacimiento": "1949-04-03T00:00:00",
+      "Documento": "33646230",
+      "Telefono": "4052612007"
+    },
+    {
+      "ObraSocial": "luctus et ultrices posuere cubilia curae",
+      "NumeroAfiliado": "4311",
+      "TelefonoContacto": "1773234758",
+      "Nombre": "\u00E5ke",
+      "Apellido": "arger",
+      "Edad": 59,
+      "FechaDeNacimiento": "1963-05-26T00:00:00",
+      "Documento": "28097472",
+      "Telefono": "4829645308"
+    },
+    {
+      "ObraSocial": "imperdiet et commodo vulputate justo in blandit ultrices enim lorem",
+      "NumeroAfiliado": "8626",
+      "TelefonoContacto": "",
+      "Nombre": "fran\u00E7oise",
+      "Apellido": "imbrey",
+      "Edad": 58,
+      "FechaDeNacimiento": "1963-07-02T00:00:00",
+      "Documento": "17790625",
+      "Telefono": "2904661740"
+    },
+    {
+      "ObraSocial": "ac tellus semper interdum mauris ullamcorper",
+      "NumeroAfiliado": "8979",
+      "TelefonoContacto": "1887206732",
+      "Nombre": "laur\u00E8ne",
+      "Apellido": "farryann",
+      "Edad": 66,
+      "FechaDeNacimiento": "1955-12-13T00:00:00",
+      "Documento": "33277488",
+      "Telefono": "3028040568"
+    },
+    {
+      "ObraSocial": "id pretium iaculis diam erat fermentum justo nec",
+      "NumeroAfiliado": "6097",
+      "TelefonoContacto": "3383785009",
+      "Nombre": "laur\u00E9lie",
+      "Apellido": "clavey",
+      "Edad": 48,
+      "FechaDeNacimiento": "1973-10-16T00:00:00",
+      "Documento": "47116503",
+      "Telefono": "7629164371"
+    },
+    {
+      "ObraSocial": "nulla facilisi cras non velit nec nisi vulputate nonummy maecenas",
+      "NumeroAfiliado": "9700",
+      "TelefonoContacto": "9549778048",
+      "Nombre": "edm\u00E9e",
+      "Apellido": "possel",
+      "Edad": 35,
+      "FechaDeNacimiento": "1986-11-16T00:00:00",
+      "Documento": "31708252",
+      "Telefono": "6082900787"
+    },
+    {
+      "ObraSocial": "pulvinar lobortis est phasellus sit amet erat nulla tempus",
+      "NumeroAfiliado": "7032",
+      "TelefonoContacto": "8228837011",
+      "Nombre": "l\u00E8i",
+      "Apellido": "barkly",
+      "Edad": 44,
+      "FechaDeNacimiento": "1977-10-03T00:00:00",
+      "Documento": "32657928",
+      "Telefono": "7722398672"
+    },
+    {
+      "ObraSocial": "tortor risus dapibus augue",
+      "NumeroAfiliado": "7567",
+      "TelefonoContacto": "5378056031",
+      "Nombre": "t\u00E1ng",
+      "Apellido": "mebius",
+      "Edad": 48,
+      "FechaDeNacimiento": "1974-01-02T00:00:00",
+      "Documento": "30757346",
+      "Telefono": "1847070996"
+    },
+    {
+      "ObraSocial": "at feugiat non pretium",
+      "NumeroAfiliado": "4286",
+      "TelefonoContacto": "",
+      "Nombre": "na\u00EBlle",
+      "Apellido": "pumphreys",
+      "Edad": 10,
+      "FechaDeNacimiento": "2012-04-18T00:00:00",
+      "Documento": "14565800",
+      "Telefono": "3123366017"
+    },
+    {
+      "ObraSocial": "justo sollicitudin ut suscipit a feugiat et eros vestibulum",
+      "NumeroAfiliado": "8945",
+      "TelefonoContacto": "8799379048",
+      "Nombre": "y\u00E8",
+      "Apellido": "kobelt",
+      "Edad": 66,
+      "FechaDeNacimiento": "1956-06-08T00:00:00",
+      "Documento": "46998519",
+      "Telefono": "3446791391"
+    },
+    {
+      "ObraSocial": "est et tempus semper est quam",
+      "NumeroAfiliado": "9122",
+      "TelefonoContacto": "",
+      "Nombre": "ku\u00ED",
+      "Apellido": "catcherside",
+      "Edad": 14,
+      "FechaDeNacimiento": "2007-09-18T00:00:00",
+      "Documento": "14700979",
+      "Telefono": "4692641035"
+    },
+    {
+      "ObraSocial": "ut erat curabitur gravida nisi at nibh in",
+      "NumeroAfiliado": "5305",
+      "TelefonoContacto": "",
+      "Nombre": "\u00E5sa",
+      "Apellido": "petheridge",
+      "Edad": 74,
+      "FechaDeNacimiento": "1948-05-02T00:00:00",
+      "Documento": "15844973",
+      "Telefono": "2807879309"
+    },
+    {
+      "ObraSocial": "pede venenatis non sodales sed tincidunt eu felis fusce",
+      "NumeroAfiliado": "8691",
+      "TelefonoContacto": "9586101023",
+      "Nombre": "\u00E5sa",
+      "Apellido": "salzberg",
+      "Edad": 5,
+      "FechaDeNacimiento": "2017-05-20T00:00:00",
+      "Documento": "42639098",
+      "Telefono": "3675805682"
+    },
+    {
+      "ObraSocial": "iaculis justo in hac habitasse",
+      "NumeroAfiliado": "4784",
+      "TelefonoContacto": "",
+      "Nombre": "chlo\u00E9",
+      "Apellido": "pettko",
+      "Edad": 29,
+      "FechaDeNacimiento": "1992-07-18T00:00:00",
+      "Documento": "10781202",
+      "Telefono": "4457008210"
+    },
+    {
+      "ObraSocial": "proin eu mi nulla ac",
+      "NumeroAfiliado": "7333",
+      "TelefonoContacto": "",
+      "Nombre": "r\u00E9serv\u00E9s",
+      "Apellido": "costigan",
+      "Edad": 77,
+      "FechaDeNacimiento": "1945-06-23T00:00:00",
+      "Documento": "49645615",
+      "Telefono": "7696751475"
+    },
+    {
+      "ObraSocial": "posuere nonummy integer non velit donec diam",
+      "NumeroAfiliado": "8667",
+      "TelefonoContacto": "",
+      "Nombre": "annot\u00E9e",
+      "Apellido": "casier",
+      "Edad": 9,
+      "FechaDeNacimiento": "2012-08-25T00:00:00",
+      "Documento": "19310852",
+      "Telefono": "9293056036"
+    },
+    {
+      "ObraSocial": "lorem quisque ut erat",
+      "NumeroAfiliado": "8616",
+      "TelefonoContacto": "",
+      "Nombre": "illustr\u00E9e",
+      "Apellido": "ruilton",
+      "Edad": 22,
+      "FechaDeNacimiento": "1999-10-31T00:00:00",
+      "Documento": "45165505",
+      "Telefono": "1212491210"
+    },
+    {
+      "ObraSocial": "nulla nunc purus phasellus in felis donec semper",
+      "NumeroAfiliado": "6421",
+      "TelefonoContacto": "",
+      "Nombre": "m\u00E9ryl",
+      "Apellido": "jeannaud",
+      "Edad": 74,
+      "FechaDeNacimiento": "1947-12-09T00:00:00",
+      "Documento": "30607238",
+      "Telefono": "2974228178"
+    },
+    {
+      "ObraSocial": "sed tristique in tempus sit amet sem",
+      "NumeroAfiliado": "8824",
+      "TelefonoContacto": "",
+      "Nombre": "gis\u00E8le",
+      "Apellido": "canto",
+      "Edad": 38,
+      "FechaDeNacimiento": "1984-03-09T00:00:00",
+      "Documento": "39433077",
+      "Telefono": "7322931640"
+    },
+    {
+      "ObraSocial": "arcu adipiscing molestie hendrerit at vulputate vitae",
+      "NumeroAfiliado": "6893",
+      "TelefonoContacto": "",
+      "Nombre": "andr\u00E9a",
+      "Apellido": "gilberthorpe",
+      "Edad": 10,
+      "FechaDeNacimiento": "2012-04-28T00:00:00",
+      "Documento": "25066666",
+      "Telefono": "4762451692"
+    },
+    {
+      "ObraSocial": "id luctus nec molestie",
+      "NumeroAfiliado": "9496",
+      "TelefonoContacto": "2302920352",
+      "Nombre": "val\u00E9rie",
+      "Apellido": "d\u0027costa",
+      "Edad": 43,
+      "FechaDeNacimiento": "1979-04-01T00:00:00",
+      "Documento": "47507872",
+      "Telefono": "4892376042"
+    },
+    {
+      "ObraSocial": "lorem ipsum dolor sit amet consectetuer adipiscing elit",
+      "NumeroAfiliado": "4723",
+      "TelefonoContacto": "2991228187",
+      "Nombre": "t\u00E1n",
+      "Apellido": "jelks",
+      "Edad": 8,
+      "FechaDeNacimiento": "2014-01-07T00:00:00",
+      "Documento": "33606935",
+      "Telefono": "8259670551"
+    },
+    {
+      "ObraSocial": "tortor sollicitudin mi sit amet lobortis sapien sapien non mi",
+      "NumeroAfiliado": "4258",
+      "TelefonoContacto": "8551961736",
+      "Nombre": "d\u00E0",
+      "Apellido": "linder",
+      "Edad": 48,
+      "FechaDeNacimiento": "1974-05-19T00:00:00",
+      "Documento": "38692723",
+      "Telefono": "6817986520"
+    },
+    {
+      "ObraSocial": "massa id nisl venenatis",
+      "NumeroAfiliado": "7613",
+      "TelefonoContacto": "",
+      "Nombre": "ma\u00EBline",
+      "Apellido": "dutnall",
+      "Edad": 66,
+      "FechaDeNacimiento": "1955-11-21T00:00:00",
+      "Documento": "34837548",
+      "Telefono": "5522966205"
+    },
+    {
+      "ObraSocial": "nec dui luctus rutrum nulla tellus in sagittis dui vel",
+      "NumeroAfiliado": "7625",
+      "TelefonoContacto": "2384884813",
+      "Nombre": "v\u00E9rane",
+      "Apellido": "jiles",
+      "Edad": 10,
+      "FechaDeNacimiento": "2011-07-18T00:00:00",
+      "Documento": "22063480",
+      "Telefono": "5806944866"
+    },
+    {
+      "ObraSocial": "magna vestibulum aliquet ultrices erat tortor",
+      "NumeroAfiliado": "8244",
+      "TelefonoContacto": "",
+      "Nombre": "lucr\u00E8ce",
+      "Apellido": "sandever",
+      "Edad": 17,
+      "FechaDeNacimiento": "2005-03-05T00:00:00",
+      "Documento": "45561019",
+      "Telefono": "2998199611"
+    },
+    {
+      "ObraSocial": "massa tempor convallis nulla neque libero convallis eget eleifend luctus",
+      "NumeroAfiliado": "6588",
+      "TelefonoContacto": "9922073521",
+      "Nombre": "laur\u00E9na",
+      "Apellido": "kirsche",
+      "Edad": 26,
+      "FechaDeNacimiento": "1995-12-27T00:00:00",
+      "Documento": "30038097",
+      "Telefono": "7689659382"
+    },
+    {
+      "ObraSocial": "aliquet at feugiat non pretium quis",
+      "NumeroAfiliado": "4939",
+      "TelefonoContacto": "",
+      "Nombre": "m\u00E9thode",
+      "Apellido": "aplin",
+      "Edad": 21,
+      "FechaDeNacimiento": "2000-07-26T00:00:00",
+      "Documento": "30436977",
+      "Telefono": "3698282882"
+    },
+    {
+      "ObraSocial": "elementum pellentesque quisque porta volutpat erat",
+      "NumeroAfiliado": "6409",
+      "TelefonoContacto": "",
+      "Nombre": "ma\u00EBlla",
+      "Apellido": "crannage",
+      "Edad": 68,
+      "FechaDeNacimiento": "1953-11-30T00:00:00",
+      "Documento": "48960160",
+      "Telefono": "6714916343"
+    },
+    {
+      "ObraSocial": "sapien cum sociis natoque penatibus et",
+      "NumeroAfiliado": "5342",
+      "TelefonoContacto": "",
+      "Nombre": "b\u00E9rang\u00E8re",
+      "Apellido": "carnock",
+      "Edad": 67,
+      "FechaDeNacimiento": "1954-12-16T00:00:00",
+      "Documento": "10441714",
+      "Telefono": "8606078021"
+    },
+    {
+      "ObraSocial": "eu interdum eu tincidunt in leo",
+      "NumeroAfiliado": "5760",
+      "TelefonoContacto": "",
+      "Nombre": "st\u00E9phanie",
+      "Apellido": "peattie",
+      "Edad": 77,
+      "FechaDeNacimiento": "1945-06-12T00:00:00",
+      "Documento": "17986140",
+      "Telefono": "1223505951"
+    },
+    {
+      "ObraSocial": "nam ultrices libero non mattis pulvinar nulla pede ullamcorper augue",
+      "NumeroAfiliado": "7684",
+      "TelefonoContacto": "2535117444",
+      "Nombre": "gis\u00E8le",
+      "Apellido": "macalroy",
+      "Edad": 33,
+      "FechaDeNacimiento": "1988-11-29T00:00:00",
+      "Documento": "30662210",
+      "Telefono": "9686707873"
+    },
+    {
+      "ObraSocial": "nulla sed accumsan felis ut at",
+      "NumeroAfiliado": "5777",
+      "TelefonoContacto": "",
+      "Nombre": "lor\u00E8ne",
+      "Apellido": "gehringer",
+      "Edad": 20,
+      "FechaDeNacimiento": "2001-08-12T00:00:00",
+      "Documento": "19871189",
+      "Telefono": "9504591566"
+    },
+    {
+      "ObraSocial": "curae mauris viverra diam vitae quam suspendisse potenti nullam porttitor",
+      "NumeroAfiliado": "5224",
+      "TelefonoContacto": "",
+      "Nombre": "s\u00E9verine",
+      "Apellido": "baltrushaitis",
+      "Edad": 58,
+      "FechaDeNacimiento": "1964-05-08T00:00:00",
+      "Documento": "34070776",
+      "Telefono": "8212231666"
+    },
+    {
+      "ObraSocial": "et ultrices posuere cubilia curae mauris viverra",
+      "NumeroAfiliado": "4843",
+      "TelefonoContacto": "",
+      "Nombre": "ma\u00EBlle",
+      "Apellido": "robjant",
+      "Edad": 20,
+      "FechaDeNacimiento": "2002-03-13T00:00:00",
+      "Documento": "34887386",
+      "Telefono": "3589995405"
+    },
+    {
+      "ObraSocial": "augue a suscipit nulla",
+      "NumeroAfiliado": "7993",
+      "TelefonoContacto": "2549884468",
+      "Nombre": "l\u00E9onie",
+      "Apellido": "hymor",
+      "Edad": 56,
+      "FechaDeNacimiento": "1965-08-08T00:00:00",
+      "Documento": "29097590",
+      "Telefono": "1831886623"
+    },
+    {
+      "ObraSocial": "vel augue vestibulum rutrum rutrum neque aenean auctor gravida sem",
+      "NumeroAfiliado": "6435",
+      "TelefonoContacto": "6532613820",
+      "Nombre": "k\u00E9vina",
+      "Apellido": "drinkall",
+      "Edad": 47,
+      "FechaDeNacimiento": "1974-10-19T00:00:00",
+      "Documento": "11208492",
+      "Telefono": "2302025072"
+    },
+    {
+      "ObraSocial": "risus praesent lectus vestibulum quam sapien varius",
+      "NumeroAfiliado": "4869",
+      "TelefonoContacto": "8387651157",
+      "Nombre": "l\u00E9a",
+      "Apellido": "dabels",
+      "Edad": 66,
+      "FechaDeNacimiento": "1956-03-08T00:00:00",
+      "Documento": "11250647",
+      "Telefono": "2557320046"
+    },
+    {
+      "ObraSocial": "lectus vestibulum quam sapien varius ut blandit non interdum in",
+      "NumeroAfiliado": "6709",
+      "TelefonoContacto": "1143448889",
+      "Nombre": "salom\u00E9",
+      "Apellido": "forgan",
+      "Edad": 54,
+      "FechaDeNacimiento": "1967-12-10T00:00:00",
+      "Documento": "27713296",
+      "Telefono": "7141290051"
+    },
+    {
+      "ObraSocial": "consequat varius integer ac leo pellentesque",
+      "NumeroAfiliado": "5158",
+      "TelefonoContacto": "7432083660",
+      "Nombre": "lo\u00EFca",
+      "Apellido": "mcaster",
+      "Edad": 26,
+      "FechaDeNacimiento": "1996-02-28T00:00:00",
+      "Documento": "20272596",
+      "Telefono": "3473006991"
+    },
+    {
+      "ObraSocial": "sed ante vivamus tortor",
+      "NumeroAfiliado": "8094",
+      "TelefonoContacto": "7934735267",
+      "Nombre": "ma\u00EFly",
+      "Apellido": "fromant",
+      "Edad": 14,
+      "FechaDeNacimiento": "2008-02-02T00:00:00",
+      "Documento": "30309913",
+      "Telefono": "1898041154"
+    },
+    {
+      "ObraSocial": "nam nulla integer pede justo lacinia eget tincidunt eget tempus",
+      "NumeroAfiliado": "6491",
+      "TelefonoContacto": "",
+      "Nombre": "agn\u00E8s",
+      "Apellido": "godfroy",
+      "Edad": 59,
+      "FechaDeNacimiento": "1963-01-06T00:00:00",
+      "Documento": "19742065",
+      "Telefono": "4023773310"
+    },
+    {
+      "ObraSocial": "in hac habitasse platea dictumst etiam faucibus",
+      "NumeroAfiliado": "9648",
+      "TelefonoContacto": "2709394459",
+      "Nombre": "doroth\u00E9e",
+      "Apellido": "errett",
+      "Edad": 23,
+      "FechaDeNacimiento": "1998-08-24T00:00:00",
+      "Documento": "29912340",
+      "Telefono": "4288839856"
+    },
+    {
+      "ObraSocial": "nibh ligula nec sem",
+      "NumeroAfiliado": "9279",
+      "TelefonoContacto": "8293300934",
+      "Nombre": "ma\u00EFt\u00E9",
+      "Apellido": "snowdon",
+      "Edad": 73,
+      "FechaDeNacimiento": "1948-08-15T00:00:00",
+      "Documento": "26550971",
+      "Telefono": "5834553555"
+    },
+    {
+      "ObraSocial": "vel pede morbi porttitor lorem id ligula suspendisse ornare consequat",
+      "NumeroAfiliado": "9274",
+      "TelefonoContacto": "",
+      "Nombre": "s\u00E9verine",
+      "Apellido": "borham",
+      "Edad": 64,
+      "FechaDeNacimiento": "1958-06-30T00:00:00",
+      "Documento": "38061921",
+      "Telefono": "9889657138"
+    },
+    {
+      "ObraSocial": "eleifend luctus ultricies eu",
+      "NumeroAfiliado": "9376",
+      "TelefonoContacto": "1814546021",
+      "Nombre": "in\u00E8s",
+      "Apellido": "obey",
+      "Edad": 19,
+      "FechaDeNacimiento": "2003-05-31T00:00:00",
+      "Documento": "26074191",
+      "Telefono": "3231339221"
+    },
+    {
+      "ObraSocial": "sapien sapien non mi integer ac neque duis bibendum",
+      "NumeroAfiliado": "9073",
+      "TelefonoContacto": "1984617619",
+      "Nombre": "\u00E5ke",
+      "Apellido": "mitchel",
+      "Edad": 36,
+      "FechaDeNacimiento": "1985-10-26T00:00:00",
+      "Documento": "27096386",
+      "Telefono": "2895026620"
+    },
+    {
+      "ObraSocial": "penatibus et magnis dis parturient",
+      "NumeroAfiliado": "7101",
+      "TelefonoContacto": "",
+      "Nombre": "ad\u00E9lie",
+      "Apellido": "veeler",
+      "Edad": 49,
+      "FechaDeNacimiento": "1972-07-24T00:00:00",
+      "Documento": "24852677",
+      "Telefono": "7833301097"
+    },
+    {
+      "ObraSocial": "at nulla suspendisse potenti cras in purus eu magna",
+      "NumeroAfiliado": "4789",
+      "TelefonoContacto": "",
+      "Nombre": "ru\u00EC",
+      "Apellido": "kellet",
+      "Edad": 65,
+      "FechaDeNacimiento": "1956-09-03T00:00:00",
+      "Documento": "13844205",
+      "Telefono": "7816308386"
+    },
+    {
+      "ObraSocial": "pulvinar lobortis est phasellus sit amet erat nulla",
+      "NumeroAfiliado": "9983",
+      "TelefonoContacto": "",
+      "Nombre": "m\u00E9lys",
+      "Apellido": "d\u0027enrico",
+      "Edad": 79,
+      "FechaDeNacimiento": "1942-09-17T00:00:00",
+      "Documento": "28545622",
+      "Telefono": "3633565024"
+    },
+    {
+      "ObraSocial": "curabitur gravida nisi at nibh in",
+      "NumeroAfiliado": "7382",
+      "TelefonoContacto": "2458655265",
+      "Nombre": "b\u00E9reng\u00E8re",
+      "Apellido": "mellanby",
+      "Edad": 61,
+      "FechaDeNacimiento": "1961-05-27T00:00:00",
+      "Documento": "46235061",
+      "Telefono": "2942803027"
+    },
+    {
+      "ObraSocial": "eu est congue elementum in hac",
+      "NumeroAfiliado": "7826",
+      "TelefonoContacto": "",
+      "Nombre": "p\u00E9lagie",
+      "Apellido": "welds",
+      "Edad": 69,
+      "FechaDeNacimiento": "1953-03-20T00:00:00",
+      "Documento": "35095829",
+      "Telefono": "9117991723"
+    },
+    {
+      "ObraSocial": "id pretium iaculis diam erat fermentum justo nec condimentum neque",
+      "NumeroAfiliado": "8930",
+      "TelefonoContacto": "6538321768",
+      "Nombre": "marl\u00E8ne",
+      "Apellido": "trenchard",
+      "Edad": 7,
+      "FechaDeNacimiento": "2015-01-20T00:00:00",
+      "Documento": "38919930",
+      "Telefono": "8363572093"
+    },
+    {
+      "ObraSocial": "faucibus orci luctus et ultrices posuere cubilia curae mauris viverra",
+      "NumeroAfiliado": "7467",
+      "TelefonoContacto": "",
+      "Nombre": "ma\u00EFlis",
+      "Apellido": "mckeaney",
+      "Edad": 25,
+      "FechaDeNacimiento": "1997-05-28T00:00:00",
+      "Documento": "27390283",
+      "Telefono": "8679095537"
+    },
+    {
+      "ObraSocial": "quis orci eget orci vehicula",
+      "NumeroAfiliado": "7657",
+      "TelefonoContacto": "2416247961",
+      "Nombre": "ang\u00E9lique",
+      "Apellido": "duley",
+      "Edad": 34,
+      "FechaDeNacimiento": "1987-11-07T00:00:00",
+      "Documento": "43327616",
+      "Telefono": "8903931894"
+    },
+    {
+      "ObraSocial": "magna vulputate luctus cum sociis natoque penatibus et magnis dis",
+      "NumeroAfiliado": "4877",
+      "TelefonoContacto": "1002742754",
+      "Nombre": "ang\u00E9lique",
+      "Apellido": "blundan",
+      "Edad": 5,
+      "FechaDeNacimiento": "2017-04-24T00:00:00",
+      "Documento": "16918971",
+      "Telefono": "9428921803"
+    },
+    {
+      "ObraSocial": "posuere cubilia curae mauris viverra diam vitae quam suspendisse",
+      "NumeroAfiliado": "6012",
+      "TelefonoContacto": "",
+      "Nombre": "\u00E5sa",
+      "Apellido": "gauford",
+      "Edad": 58,
+      "FechaDeNacimiento": "1964-05-24T00:00:00",
+      "Documento": "36559293",
+      "Telefono": "1455236930"
+    },
+    {
+      "ObraSocial": "proin at turpis a pede posuere",
+      "NumeroAfiliado": "9157",
+      "TelefonoContacto": "",
+      "Nombre": "oph\u00E9lie",
+      "Apellido": "farebrother",
+      "Edad": 35,
+      "FechaDeNacimiento": "1986-08-09T00:00:00",
+      "Documento": "38514397",
+      "Telefono": "3985655812"
+    },
+    {
+      "ObraSocial": "habitasse platea dictumst etiam faucibus",
+      "NumeroAfiliado": "5291",
+      "TelefonoContacto": "",
+      "Nombre": "marie-fran\u00E7oise",
+      "Apellido": "greenroad",
+      "Edad": 29,
+      "FechaDeNacimiento": "1993-03-13T00:00:00",
+      "Documento": "43818174",
+      "Telefono": "2432574170"
+    }
+  ],
+  "Profesionales": [
+    {
+      "Especialidades": [
+        "Cirugia",
+        "Medicina Familiar"
+      ],
+      "DiasDeAtencion": {
+        "Lunes": {
+          "Desde": "10:00",
+          "Hasta": "15:00",
+          "Atiende": true,
+          "EsPorDefecto": false
+        },
+        "Martes": {
+          "Desde": "10:00",
+          "Hasta": "11:00",
+          "Atiende": false,
+          "EsPorDefecto": true
+        },
+        "Miercoles": {
+          "Desde": "10:00",
+          "Hasta": "11:00",
+          "Atiende": false,
+          "EsPorDefecto": true
+        },
+        "Jueves": {
+          "Desde": "10:00",
+          "Hasta": "11:00",
+          "Atiende": false,
+          "EsPorDefecto": true
+        },
+        "Viernes": {
+          "Desde": "10:00",
+          "Hasta": "11:00",
+          "Atiende": false,
+          "EsPorDefecto": true
+        },
+        "Sabado": {
+          "Desde": "10:00",
+          "Hasta": "11:00",
+          "Atiende": false,
+          "EsPorDefecto": true
+        },
+        "Domingo": {
+          "Desde": "10:00",
+          "Hasta": "11:00",
+          "Atiende": false,
+          "EsPorDefecto": true
+        }
+      },
+      "Matricula": "4585859",
+      "Nombre": "leonel",
+      "Apellido": "ledesma",
+      "Edad": 22,
+      "FechaDeNacimiento": "2000-02-10T00:00:00",
+      "Documento": "42396382",
+      "Telefono": "1131396060"
+    },
+    {
+      "Especialidades": [
+        "Cirugia"
+      ],
+      "DiasDeAtencion": {
+        "Lunes": {
+          "Desde": "10:00",
+          "Hasta": "13:00",
+          "Atiende": true,
+          "EsPorDefecto": false
+        },
+        "Martes": {
+          "Desde": "13:30",
+          "Hasta": "17:00",
+          "Atiende": true,
+          "EsPorDefecto": false
+        },
+        "Miercoles": {
+          "Desde": "10:00",
+          "Hasta": "11:00",
+          "Atiende": false,
+          "EsPorDefecto": true
+        },
+        "Jueves": {
+          "Desde": "10:00",
+          "Hasta": "11:00",
+          "Atiende": false,
+          "EsPorDefecto": true
+        },
+        "Viernes": {
+          "Desde": "10:00",
+          "Hasta": "11:00",
+          "Atiende": false,
+          "EsPorDefecto": true
+        },
+        "Sabado": {
+          "Desde": "10:00",
+          "Hasta": "11:00",
+          "Atiende": false,
+          "EsPorDefecto": true
+        },
+        "Domingo": {
+          "Desde": "10:00",
+          "Hasta": "11:00",
+          "Atiende": false,
+          "EsPorDefecto": true
+        }
+      },
+      "Matricula": "1542859",
+      "Nombre": "micaela",
+      "Apellido": "perez",
+      "Edad": 22,
+      "FechaDeNacimiento": "2000-02-10T00:00:00",
+      "Documento": "45856966",
+      "Telefono": "1154256361"
+    },
+    {
+      "Especialidades": [
+        "Cirugia"
+      ],
+      "DiasDeAtencion": {
+        "Lunes": {
+          "Desde": "10:30",
+          "Hasta": "19:30",
+          "Atiende": true,
+          "EsPorDefecto": false
+        },
+        "Martes": {
+          "Desde": "10:00",
+          "Hasta": "11:00",
+          "Atiende": false,
+          "EsPorDefecto": true
+        },
+        "Miercoles": {
+          "Desde": "10:00",
+          "Hasta": "11:00",
+          "Atiende": false,
+          "EsPorDefecto": true
+        },
+        "Jueves": {
+          "Desde": "10:00",
+          "Hasta": "11:00",
+          "Atiende": false,
+          "EsPorDefecto": true
+        },
+        "Viernes": {
+          "Desde": "10:00",
+          "Hasta": "11:00",
+          "Atiende": false,
+          "EsPorDefecto": true
+        },
+        "Sabado": {
+          "Desde": "10:00",
+          "Hasta": "11:00",
+          "Atiende": false,
+          "EsPorDefecto": true
+        },
+        "Domingo": {
+          "Desde": "10:00",
+          "Hasta": "11:00",
+          "Atiende": false,
+          "EsPorDefecto": true
+        }
+      },
+      "Matricula": "45857485",
+      "Nombre": "juan",
+      "Apellido": "perez",
+      "Edad": 22,
+      "FechaDeNacimiento": "2000-02-10T00:00:00",
+      "Documento": "42396935",
+      "Telefono": "113139060"
+    }
+  ],
+  "ListaEspecialidades": [
+    "Cirugia",
+    "Medicina Familiar"
+  ],
+  "Turnos": [
+    {
+      "Fecha": "2022-06-06T10:00:00-03:00",
+      "Paciente": {
+        "ObraSocial": "osde",
+        "NumeroAfiliado": "1",
+        "TelefonoContacto": "42939357",
+        "Nombre": "leonel",
+        "Apellido": "ledesma",
+        "Edad": 22,
+        "FechaDeNacimiento": "2000-02-10T00:00:00",
+        "Documento": "42396382",
+        "Telefono": "1131306060"
+      },
+      "Profesional": {
+        "Especialidades": [
+          "Cirugia",
+          "Medicina Familiar"
+        ],
+        "DiasDeAtencion": {
+          "Lunes": {
+            "Desde": "10:00",
+            "Hasta": "15:00",
+            "Atiende": true,
+            "EsPorDefecto": false
+          },
+          "Martes": {
+            "Desde": "10:00",
+            "Hasta": "11:00",
+            "Atiende": false,
+            "EsPorDefecto": true
+          },
+          "Miercoles": {
+            "Desde": "10:00",
+            "Hasta": "11:00",
+            "Atiende": false,
+            "EsPorDefecto": true
+          },
+          "Jueves": {
+            "Desde": "10:00",
+            "Hasta": "11:00",
+            "Atiende": false,
+            "EsPorDefecto": true
+          },
+          "Viernes": {
+            "Desde": "10:00",
+            "Hasta": "11:00",
+            "Atiende": false,
+            "EsPorDefecto": true
+          },
+          "Sabado": {
+            "Desde": "10:00",
+            "Hasta": "11:00",
+            "Atiende": false,
+            "EsPorDefecto": true
+          },
+          "Domingo": {
+            "Desde": "10:00",
+            "Hasta": "11:00",
+            "Atiende": false,
+            "EsPorDefecto": true
+          }
+        },
+        "Matricula": "4585859",
+        "Nombre": "leonel",
+        "Apellido": "ledesma",
+        "Edad": 22,
+        "FechaDeNacimiento": "2000-02-10T00:00:00",
+        "Documento": "42396382",
+        "Telefono": "1131396060"
+      },
+      "Especialidad": "Cirugia",
+      "Id": 1,
+      "PacienteAsistio": false
+    },
+    {
+      "Fecha": "2022-06-06T10:30:00-03:00",
+      "Paciente": {
+        "ObraSocial": "osde",
+        "NumeroAfiliado": "1",
+        "TelefonoContacto": "42939357",
+        "Nombre": "leonel",
+        "Apellido": "ledesma",
+        "Edad": 22,
+        "FechaDeNacimiento": "2000-02-10T00:00:00",
+        "Documento": "42396382",
+        "Telefono": "1131306060"
+      },
+      "Profesional": {
+        "Especialidades": [
+          "Cirugia",
+          "Medicina Familiar"
+        ],
+        "DiasDeAtencion": {
+          "Lunes": {
+            "Desde": "10:00",
+            "Hasta": "15:00",
+            "Atiende": true,
+            "EsPorDefecto": false
+          },
+          "Martes": {
+            "Desde": "10:00",
+            "Hasta": "11:00",
+            "Atiende": false,
+            "EsPorDefecto": true
+          },
+          "Miercoles": {
+            "Desde": "10:00",
+            "Hasta": "11:00",
+            "Atiende": false,
+            "EsPorDefecto": true
+          },
+          "Jueves": {
+            "Desde": "10:00",
+            "Hasta": "11:00",
+            "Atiende": false,
+            "EsPorDefecto": true
+          },
+          "Viernes": {
+            "Desde": "10:00",
+            "Hasta": "11:00",
+            "Atiende": false,
+            "EsPorDefecto": true
+          },
+          "Sabado": {
+            "Desde": "10:00",
+            "Hasta": "11:00",
+            "Atiende": false,
+            "EsPorDefecto": true
+          },
+          "Domingo": {
+            "Desde": "10:00",
+            "Hasta": "11:00",
+            "Atiende": false,
+            "EsPorDefecto": true
+          }
+        },
+        "Matricula": "4585859",
+        "Nombre": "leonel",
+        "Apellido": "ledesma",
+        "Edad": 22,
+        "FechaDeNacimiento": "2000-02-10T00:00:00",
+        "Documento": "42396382",
+        "Telefono": "1131396060"
+      },
+      "Especialidad": "Medicina Familiar",
+      "Id": 2,
+      "PacienteAsistio": false
+    },
+    {
+      "Fecha": "2022-06-13T10:00:00-03:00",
+      "Paciente": {
+        "ObraSocial": "osde",
+        "NumeroAfiliado": "1",
+        "TelefonoContacto": "42939357",
+        "Nombre": "leonel",
+        "Apellido": "ledesma",
+        "Edad": 22,
+        "FechaDeNacimiento": "2000-02-10T00:00:00",
+        "Documento": "42396382",
+        "Telefono": "1131306060"
+      },
+      "Profesional": {
+        "Especialidades": [
+          "Cirugia",
+          "Medicina Familiar"
+        ],
+        "DiasDeAtencion": {
+          "Lunes": {
+            "Desde": "10:00",
+            "Hasta": "15:00",
+            "Atiende": true,
+            "EsPorDefecto": false
+          },
+          "Martes": {
+            "Desde": "10:00",
+            "Hasta": "11:00",
+            "Atiende": false,
+            "EsPorDefecto": true
+          },
+          "Miercoles": {
+            "Desde": "10:00",
+            "Hasta": "11:00",
+            "Atiende": false,
+            "EsPorDefecto": true
+          },
+          "Jueves": {
+            "Desde": "10:00",
+            "Hasta": "11:00",
+            "Atiende": false,
+            "EsPorDefecto": true
+          },
+          "Viernes": {
+            "Desde": "10:00",
+            "Hasta": "11:00",
+            "Atiende": false,
+            "EsPorDefecto": true
+          },
+          "Sabado": {
+            "Desde": "10:00",
+            "Hasta": "11:00",
+            "Atiende": false,
+            "EsPorDefecto": true
+          },
+          "Domingo": {
+            "Desde": "10:00",
+            "Hasta": "11:00",
+            "Atiende": false,
+            "EsPorDefecto": true
+          }
+        },
+        "Matricula": "4585859",
+        "Nombre": "leonel",
+        "Apellido": "ledesma",
+        "Edad": 22,
+        "FechaDeNacimiento": "2000-02-10T00:00:00",
+        "Documento": "42396382",
+        "Telefono": "1131396060"
+      },
+      "Especialidad": "Medicina Familiar",
+      "Id": 3,
+      "PacienteAsistio": false
+    },
+    {
+      "Fecha": "2022-06-06T11:00:00-03:00",
+      "Paciente": {
+        "ObraSocial": "Supri",
+        "NumeroAfiliado": "3",
+        "TelefonoContacto": "4257",
+        "Nombre": "exequiel",
+        "Apellido": "ledesma",
+        "Edad": 28,
+        "FechaDeNacimiento": "1994-04-21T00:00:00",
+        "Documento": "34226336",
+        "Telefono": "1131306060"
+      },
+      "Profesional": {
+        "Especialidades": [
+          "Cirugia",
+          "Medicina Familiar"
+        ],
+        "DiasDeAtencion": {
+          "Lunes": {
+            "Desde": "10:00",
+            "Hasta": "15:00",
+            "Atiende": true,
+            "EsPorDefecto": false
+          },
+          "Martes": {
+            "Desde": "10:00",
+            "Hasta": "11:00",
+            "Atiende": false,
+            "EsPorDefecto": true
+          },
+          "Miercoles": {
+            "Desde": "10:00",
+            "Hasta": "11:00",
+            "Atiende": false,
+            "EsPorDefecto": true
+          },
+          "Jueves": {
+            "Desde": "10:00",
+            "Hasta": "11:00",
+            "Atiende": false,
+            "EsPorDefecto": true
+          },
+          "Viernes": {
+            "Desde": "10:00",
+            "Hasta": "11:00",
+            "Atiende": false,
+            "EsPorDefecto": true
+          },
+          "Sabado": {
+            "Desde": "10:00",
+            "Hasta": "11:00",
+            "Atiende": false,
+            "EsPorDefecto": true
+          },
+          "Domingo": {
+            "Desde": "10:00",
+            "Hasta": "11:00",
+            "Atiende": false,
+            "EsPorDefecto": true
+          }
+        },
+        "Matricula": "4585859",
+        "Nombre": "leonel",
+        "Apellido": "ledesma",
+        "Edad": 22,
+        "FechaDeNacimiento": "2000-02-10T00:00:00",
+        "Documento": "42396382",
+        "Telefono": "1131396060"
+      },
+      "Especialidad": "Cirugia",
+      "Id": 4,
+      "PacienteAsistio": false
+    }
+  ],
+  "DiasDeAtencion": {
+    "Lunes": {
+      "Desde": "10:00",
+      "Hasta": "20:00",
+      "Atiende": true,
+      "EsPorDefecto": false
+    },
+    "Martes": {
+      "Desde": "10:00",
+      "Hasta": "20:00",
+      "Atiende": true,
+      "EsPorDefecto": false
+    },
+    "Miercoles": {
+      "Desde": "10:00",
+      "Hasta": "20:00",
+      "Atiende": true,
+      "EsPorDefecto": false
+    },
+    "Jueves": {
+      "Desde": "10:00",
+      "Hasta": "20:00",
+      "Atiende": true,
+      "EsPorDefecto": false
+    },
+    "Viernes": {
+      "Desde": "10:00",
+      "Hasta": "20:00",
+      "Atiende": true,
+      "EsPorDefecto": false
+    },
+    "Sabado": {
+      "Desde": "10:00",
+      "Hasta": "11:00",
+      "Atiende": false,
+      "EsPorDefecto": true
+    },
+    "Domingo": {
+      "Desde": "10:00",
+      "Hasta": "11:00",
+      "Atiende": false,
+      "EsPorDefecto": true
+    }
+  },
+  "DuracionDeTurnos": 30,
+  "ProximoIdTurno": 5
+}
