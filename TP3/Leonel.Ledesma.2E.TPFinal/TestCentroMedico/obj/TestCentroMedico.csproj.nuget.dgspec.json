@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP3\\Leonel.Ledesma.2E.TP3\\TestCentroMedico\\TestCentroMedico.csproj": {}
+    "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP3\\Leonel.Ledesma.2E.TPFinal\\TestCentroMedico\\TestCentroMedico.csproj": {}
   },
   "projects": {
-    "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP3\\Leonel.Ledesma.2E.TP3\\Entidades\\Entidades.csproj": {
+    "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP3\\Leonel.Ledesma.2E.TPFinal\\Entidades\\Entidades.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP3\\Leonel.Ledesma.2E.TP3\\Entidades\\Entidades.csproj",
+        "projectUniqueName": "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP3\\Leonel.Ledesma.2E.TPFinal\\Entidades\\Entidades.csproj",
         "projectName": "Entidades",
-        "projectPath": "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP3\\Leonel.Ledesma.2E.TP3\\Entidades\\Entidades.csproj",
+        "projectPath": "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP3\\Leonel.Ledesma.2E.TPFinal\\Entidades\\Entidades.csproj",
         "packagesPath": "C:\\Users\\leone\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP3\\Leonel.Ledesma.2E.TP3\\Entidades\\obj\\",
+        "outputPath": "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP3\\Leonel.Ledesma.2E.TPFinal\\Entidades\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\leone\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -58,14 +58,14 @@
         }
       }
     },
-    "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP3\\Leonel.Ledesma.2E.TP3\\TestCentroMedico\\TestCentroMedico.csproj": {
+    "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP3\\Leonel.Ledesma.2E.TPFinal\\TestCentroMedico\\TestCentroMedico.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP3\\Leonel.Ledesma.2E.TP3\\TestCentroMedico\\TestCentroMedico.csproj",
+        "projectUniqueName": "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP3\\Leonel.Ledesma.2E.TPFinal\\TestCentroMedico\\TestCentroMedico.csproj",
         "projectName": "TestCentroMedico",
-        "projectPath": "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP3\\Leonel.Ledesma.2E.TP3\\TestCentroMedico\\TestCentroMedico.csproj",
+        "projectPath": "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP3\\Leonel.Ledesma.2E.TPFinal\\TestCentroMedico\\TestCentroMedico.csproj",
         "packagesPath": "C:\\Users\\leone\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP3\\Leonel.Ledesma.2E.TP3\\TestCentroMedico\\obj\\",
+        "outputPath": "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP3\\Leonel.Ledesma.2E.TPFinal\\TestCentroMedico\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\leone\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -82,8 +82,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP3\\Leonel.Ledesma.2E.TP3\\Entidades\\Entidades.csproj": {
-                "projectPath": "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP3\\Leonel.Ledesma.2E.TP3\\Entidades\\Entidades.csproj"
+              "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP3\\Leonel.Ledesma.2E.TPFinal\\Entidades\\Entidades.csproj": {
+                "projectPath": "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP3\\Leonel.Ledesma.2E.TPFinal\\Entidades\\Entidades.csproj"
               }
             }
           }

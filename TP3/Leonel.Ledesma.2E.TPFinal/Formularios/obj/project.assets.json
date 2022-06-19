@@ -32,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP3\\Leonel.Ledesma.2E.TP3\\Formularios\\Formularios.csproj",
+      "projectUniqueName": "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP3\\Leonel.Ledesma.2E.TPFinal\\Formularios\\Formularios.csproj",
       "projectName": "Formularios",
-      "projectPath": "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP3\\Leonel.Ledesma.2E.TP3\\Formularios\\Formularios.csproj",
+      "projectPath": "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP3\\Leonel.Ledesma.2E.TPFinal\\Formularios\\Formularios.csproj",
       "packagesPath": "C:\\Users\\leone\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP3\\Leonel.Ledesma.2E.TP3\\Formularios\\obj\\",
+      "outputPath": "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP3\\Leonel.Ledesma.2E.TPFinal\\Formularios\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\leone\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -53,8 +53,8 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP3\\Leonel.Ledesma.2E.TP3\\Entidades\\Entidades.csproj": {
-              "projectPath": "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP3\\Leonel.Ledesma.2E.TP3\\Entidades\\Entidades.csproj"
+            "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP3\\Leonel.Ledesma.2E.TPFinal\\Entidades\\Entidades.csproj": {
+              "projectPath": "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP3\\Leonel.Ledesma.2E.TPFinal\\Entidades\\Entidades.csproj"
             }
           }
         }

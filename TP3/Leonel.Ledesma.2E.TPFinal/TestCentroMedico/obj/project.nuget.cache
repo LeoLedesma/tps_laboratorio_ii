@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nU228xNt1S0ZPTdl7GWes3vDkOWp2oyhDOqtY8PMTfcuw14oHY8JNzyaSyCW1MvurwHLjzF1iPAWxTJVhybOmw==",
+  "dgSpecHash": "fdltwxISF0ZQiTokGvwQxkBRIVXAbIhrImb2tG3K8s/poLrPsmbOC9/rkDDU+vSP8MK85WUHXt6MVhXxO03sig==",
   "success": true,
-  "projectFilePath": "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP3\\Leonel.Ledesma.2E.TP3\\TestCentroMedico\\TestCentroMedico.csproj",
+  "projectFilePath": "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP3\\Leonel.Ledesma.2E.TPFinal\\TestCentroMedico\\TestCentroMedico.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\leone\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\leone\\.nuget\\packages\\microsoft.codecoverage\\17.2.0\\microsoft.codecoverage.17.2.0.nupkg.sha512",
