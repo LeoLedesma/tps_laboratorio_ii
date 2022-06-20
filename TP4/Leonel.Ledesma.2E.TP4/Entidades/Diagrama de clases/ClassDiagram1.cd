@@ -10,7 +10,7 @@
       </Enum>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>kAQAEQAAAJAACQKCwIEAoMJ4ASIAQAQAUEEABEwEBiY=</HashCode>
+      <HashCode>kAQAGQAAAJAACQKCwIEAoMJ4ASIAQAQAUEEABEwEBiY=</HashCode>
       <FileName>Models\CentroMedico.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -30,7 +30,7 @@
       </Enum>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAIQAADCEAACQgAAQgAIiAgACAAIAAkAAAiI=</HashCode>
+      <HashCode>AAACAAAAAAQAADCEAAAQgCIQAAIiAgACAAIAAkAAAiI=</HashCode>
       <FileName>Models\Persona.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -50,6 +50,13 @@
       <FileName>Models\Paciente.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Entidades.GestorSQL">
+    <Position X="8.25" Y="16.25" Width="5.5" />
+    <TypeIdentifier>
+      <HashCode>oCSCARAGQBAaCAIAClSJroArCAMAACAABUIYAgACAQA=</HashCode>
+      <FileName>GestorSQL.cs</FileName>
+    </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

@@ -233,7 +233,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(840, 662);
+            this.ClientSize = new System.Drawing.Size(1097, 662);
             this.Controls.Add(this.btnNuevoTurno);
             this.Controls.Add(this.cmbBuscarTurnos);
             this.Controls.Add(this.BtnConfirmarTurno);

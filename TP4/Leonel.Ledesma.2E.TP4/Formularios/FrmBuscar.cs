@@ -284,10 +284,10 @@ namespace Formularios
             if (abrirFuncionPaciente)
             {
                 this.dgvCoincidencias.DataSource = this.coincidenciasPacientes;
-                this.dgvCoincidencias.Columns["NumeroAfiliado"].DisplayIndex = 5;
+                this.dgvCoincidencias.Columns["NumeroAfiliado"].DisplayIndex = 6;
                 this.dgvCoincidencias.Columns["NumeroAfiliado"].HeaderText = "N° Afiliado";
                 this.dgvCoincidencias.Columns["ObraSocial"].HeaderText = "Obra Social";
-                this.dgvCoincidencias.Columns["ObraSocial"].DisplayIndex = 4;
+                this.dgvCoincidencias.Columns["ObraSocial"].DisplayIndex = 5;
                 this.dgvCoincidencias.Columns["TelefonoContacto"].Visible = false;
             }
             else
@@ -295,12 +295,13 @@ namespace Formularios
                 this.dgvCoincidencias.DataSource = this.coincidenciasProfesionales;
                 this.dgvCoincidencias.Columns["Matricula"].DisplayIndex = 4;
             }
-
-            this.dgvCoincidencias.Columns["Documento"].DisplayIndex = 0;
-            this.dgvCoincidencias.Columns["Nombre"].DisplayIndex = 1;
-            this.dgvCoincidencias.Columns["Apellido"].DisplayIndex = 2;
+            this.dgvCoincidencias.Columns["Id"].DisplayIndex = 0;
+            this.dgvCoincidencias.Columns["Documento"].DisplayIndex = 1;
+            this.dgvCoincidencias.Columns["Nombre"].DisplayIndex = 2;
+            this.dgvCoincidencias.Columns["Apellido"].DisplayIndex = 3;
             this.dgvCoincidencias.Columns["FechaDeNacimiento"].Visible = false;
-            this.dgvCoincidencias.Columns["Telefono"].DisplayIndex = 3;
+            this.dgvCoincidencias.Columns["Telefono"].DisplayIndex = 4;
+            this.dgvCoincidencias.Columns["Nacionalidad"].Visible = false;
         }
 
         /// <summary>
@@ -392,7 +393,7 @@ namespace Formularios
         {
             try
             {
-                string id = dgvCoincidencias.CurrentRow.Cells["Documento"].Value.ToString();
+                string id = dgvCoincidencias.CurrentRow.Cells["id"].Value.ToString();
                 return centroMedico.BuscarTurno(int.Parse(id));
             }
             catch (Exception)
@@ -573,6 +574,11 @@ namespace Formularios
         //------------Eventos
 
 
+        /// <summary>
+        /// Evento que se ejecuta cuando se cambia el elemento seleccionado en cmbBuscarPor, modificando el texto de la etiqueta.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cmbBuscarPor_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -594,11 +600,22 @@ namespace Formularios
             }
         }
 
+        /// <summary>
+        /// Evento que se ejecuta al presionar el boton buscar, buscando por el texto ingresado en el textbox y mostrando los resultados.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
             this.Buscar();
         }
 
+
+        /// <summary>
+        /// Evento que se lanza para validar que las teclas presionadas sean las correctas.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txbBusqueda_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!abrirFuncionTurnos)
@@ -620,31 +637,51 @@ namespace Formularios
                 switch (cmbBuscarPor.SelectedIndex)
                 {
                     case 0:
-                    case 1:
+                    case 2:
                         this.ValidarCampoNumerico(sender, e);
                         break;
-                    case 2:
+                    case 1:
                         this.ValidarCampoChars(sender, e);
                         break;
                 }
             }
         }
 
+        /// <summary>
+        /// Evento que se lanza para hacer una busqueda por el texto ingresado en el textbox.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txbBusqueda_KeyUp(object sender, KeyEventArgs e)
         {
             this.Buscar();
         }
 
+        /// <summary>
+        /// Evento que se lanza para hacer una busqueda por el texto ingresado en el textbox.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txbBusqueda_Enter(object sender, EventArgs e)
         {
             this.Buscar();
         }
 
+        /// <summary>
+        /// Evento que se lanza al hacer doble click sobre una celda del dgvCoincidencias, abriendo la funcion modificar de dicha entidad.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgvCoincidencias_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             this.Modificar();
         }
 
+        /// <summary>
+        /// Evento que se lanza al hacer click sobre el boton, elimina la entidad seleccionada.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
             try
@@ -667,6 +704,11 @@ namespace Formularios
             Buscar();
         }
 
+        /// <summary>
+        /// Evento que se lanza al darle formate a la celda haciendo que los nombres propios comiencen con mayuscula.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgvCoincidencias_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (dgvCoincidencias.Columns[e.ColumnIndex].Name == "Nombre" || dgvCoincidencias.Columns[e.ColumnIndex].Name == "Apellido")
@@ -679,16 +721,31 @@ namespace Formularios
             }
         }
 
+        /// <summary>
+        /// Evento que se lanza para exportar la entidad seleccionada.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnExportar_Click(object sender, EventArgs e)
         {
             this.Exportar();
         }
 
+        /// <summary>
+        /// Evento que lanza un nuevo formulario para modificar los horarios del profesional seleccionado.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnModificarHorarios_Click(object sender, EventArgs e)
         {
             FrmCentroSalud.Instancia().AbrirFormularioSecundario(new FrmSeleccionarHorariosAtencion(this.SeleccionarProfesional()));
         }
 
+        /// <summary>
+        /// Evento que se lanza al cambiar el indice seleccionado, alterando la visibilidad segun sea necesario.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cmbBuscarTurnos_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbBuscarTurnos.Text == "Pasados")
@@ -700,29 +757,53 @@ namespace Formularios
             this.Buscar();
         }
 
+        /// <summary>
+        /// Confirma el turno seleccionado.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnConfirmarTurno_Click(object sender, EventArgs e)
         {
             this.ConfirmarAsistenciaTurno();
         }
 
+        /// <summary>
+        /// Abre un nuevo formulario para realizar un nuevo turno con el paciente seleccionado.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnNuevoTurno_Click(object sender, EventArgs e)
         {
             FrmCentroSalud.Instancia().AbrirFormularioSecundario(new FrmNuevoTurno(this.CapturarPacienteSeleccionado()));
         }
 
+        /// <summary>
+        /// Abre la funcion modificar de la entidad seleccionada.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnModificar_Click(object sender, EventArgs e)
         {
             this.Modificar();
         }
 
+        /// <summary>
+        /// Abre un nuevo formulario para ver los turnos de la entidad.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnVerTurnos_Click(object sender, EventArgs e)
         {
             this.VerTurnos();
         }
 
+        /// <summary>
+        /// Metodo que interviene en algunos errores del dgvCoincidencias.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgvCoincidencias_DataError(object sender, DataGridViewDataErrorEventArgs e)
-        {
-            
+        {            
         }
     }
 }

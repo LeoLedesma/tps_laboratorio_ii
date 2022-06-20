@@ -454,19 +454,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\leone\\.nuget\\packages\\": {}
+    "C:\\Users\\Leonel\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP4\\Leonel.Ledesma.2E.TP4\\Entidades\\Entidades.csproj",
+      "projectUniqueName": "C:\\Users\\Leonel\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP4\\Leonel.Ledesma.2E.TP4\\Entidades\\Entidades.csproj",
       "projectName": "Entidades",
-      "projectPath": "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP4\\Leonel.Ledesma.2E.TP4\\Entidades\\Entidades.csproj",
-      "packagesPath": "C:\\Users\\leone\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP4\\Leonel.Ledesma.2E.TP4\\Entidades\\obj\\",
+      "projectPath": "C:\\Users\\Leonel\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP4\\Leonel.Ledesma.2E.TP4\\Entidades\\Entidades.csproj",
+      "packagesPath": "C:\\Users\\Leonel\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Leonel\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP4\\Leonel.Ledesma.2E.TP4\\Entidades\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\leone\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Leonel\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -512,7 +512,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

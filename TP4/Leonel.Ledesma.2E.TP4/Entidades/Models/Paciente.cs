@@ -73,11 +73,11 @@ namespace Entidades
             nuevaReferencia.Nombre = this.Nombre;
             nuevaReferencia.Apellido = this.Apellido;
             nuevaReferencia.FechaDeNacimiento = this.FechaDeNacimiento;
-            nuevaReferencia.genero = this.genero;
-            nuevaReferencia.nacionalidad = this.nacionalidad;
+            nuevaReferencia.Genero = this.Genero;
+            nuevaReferencia.Nacionalidad = this.Nacionalidad;
             nuevaReferencia.Documento = this.Documento;
             nuevaReferencia.Telefono = this.Telefono;
-            nuevaReferencia.TelefonoContacto = this.TelefonoContacto;            
+            nuevaReferencia.TelefonoContacto = this.TelefonoContacto;
             nuevaReferencia.ObraSocial = this.ObraSocial;
             nuevaReferencia.NumeroAfiliado = this.NumeroAfiliado;
             return nuevaReferencia;
@@ -105,12 +105,12 @@ namespace Entidades
             try
             {
                 streamReader = new StreamReader(path);
-                XmlSerializer xml = new XmlSerializer(typeof(Paciente));                
+                XmlSerializer xml = new XmlSerializer(typeof(Paciente));
                 return xml.Deserialize(streamReader) as Paciente;
             }
             catch (Exception e)
             {
-                throw new DeserializarException("Error al cargar el paciente", e);                
+                throw new DeserializarException("Error al cargar el paciente", e);
             }
             finally
             {
@@ -135,7 +135,7 @@ namespace Entidades
 
                 JsonSerializerOptions options = new JsonSerializerOptions();
                 string jsonString = streamReader.ReadToEnd();
-                
+
                 return JsonSerializer.Deserialize<Paciente>(jsonString); ;
 
             }

@@ -16,7 +16,6 @@ namespace Entidades
 
     public sealed class CentroMedico : ISerializable, IDeserializable<CentroMedico>
     {
-
         public enum EDuracionTurno
         {
             Corto = 10,
@@ -133,9 +132,9 @@ namespace Entidades
         {
             try
             {
-                bool resultado = GestorSQL.EliminarTurno(turno.Id);
+                this.Turnos.Remove(turno);
                 OnCambioRealizado?.Invoke();
-                return resultado;
+                return true;
             }
             catch (TurnoNoExisteException ex)
             {
@@ -224,8 +223,7 @@ namespace Entidades
             List<Turno> coincidencias = new List<Turno>();            
 
             try
-            {
-            this.Turnos = GestorSQL.RecuperarTurnos();
+            {            
                 switch (buscarPor)
                 {
                     case "id turno":
@@ -236,7 +234,6 @@ namespace Entidades
                                 coincidencias.Add(turno);
                                 break;
                             }
-
                         }
                         break;
                     case "documento paciente":

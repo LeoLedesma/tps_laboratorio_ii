@@ -106,8 +106,8 @@ namespace Formularios
             this.txbMesNacimiento.Text = this.persona.FechaDeNacimiento.Month.ToString();
             this.txbDocumento.Text = this.persona.Documento;
             this.txbTelefono.Text = this.persona.Telefono;
-            this.cmbNacionalidad.SelectedItem = this.persona.nacionalidad;
-            this.cmbGenero.SelectedItem = this.persona.genero;
+            this.cmbNacionalidad.SelectedItem = this.persona.Nacionalidad;
+            this.cmbGenero.SelectedItem = this.persona.Genero;
 
             if (this.persona is Paciente)
             {
@@ -118,7 +118,8 @@ namespace Formularios
             else if (this.persona is Profesional)
             {
                 this.txbNumeroMatricula.Text = ((Profesional)this.persona).Matricula;
-                this.ltbEspecialidadesSeleccionadas.DataSource = ((Profesional)this.persona).Especialidades;
+                this.listaEspecialidadesAuxiliar = ((Profesional)this.persona).Especialidades;
+                this.ltbEspecialidadesSeleccionadas.DataSource = listaEspecialidadesAuxiliar;
             }
         }
 
@@ -198,11 +199,17 @@ namespace Formularios
 
                 if (this.CapturarDatosFormulario(auxiliarPersona))
                 {
-                    if (GestorSQL.ActualizarPersona(auxiliarPersona))
-                    {                                          
+                    this.centroMedico.RemoverPersona(persona);
+
+                    if (this.centroMedico.AgregarPersona(auxiliarPersona))
+                    {
                         MessageBox.Show($"{persona.GetType().Name} modificado con exito!", persona.GetType().Name, MessageBoxButtons.OK);
-                        FrmNuevoTurno nuevoTurno = new FrmNuevoTurno((Paciente)persona);
-                        FrmCentroSalud.Instancia().AbrirFormularioSecundario(nuevoTurno);
+                        if (persona is Paciente)
+                        {
+                            FrmNuevoTurno nuevoTurno = new FrmNuevoTurno((Paciente)persona);
+                            FrmCentroSalud.Instancia().AbrirFormularioSecundario(nuevoTurno);
+                        }
+                        
                     }
                     else
                     {
@@ -282,8 +289,8 @@ namespace Formularios
                 int mesNacimiento = int.Parse(txbMesNacimiento.Text);
                 int añoNacimiento = int.Parse(txbAñoNacimiento.Text);
                 persona.FechaDeNacimiento = new DateTime(añoNacimiento, mesNacimiento, diaNacimiento);
-                persona.genero = (Persona.eGenero)cmbGenero.SelectedIndex;
-                persona.nacionalidad = (Persona.eNacionalidad)cmbNacionalidad.SelectedIndex;
+                persona.Genero = (Persona.eGenero)cmbGenero.SelectedIndex;
+                persona.Nacionalidad = (Persona.eNacionalidad)cmbNacionalidad.SelectedIndex;
                 persona.Telefono = txbTelefono.Text;
                 persona.Documento = txbDocumento.Text;
 
@@ -298,7 +305,7 @@ namespace Formularios
                 {
                     Profesional profesional = (Profesional)persona;
                     profesional.Matricula = txbNumeroMatricula.Text;
-                    profesional.Especialidades.AddRange(ltbEspecialidadesSeleccionadas.Items.Cast<string>());
+                    profesional.Especialidades = ltbEspecialidadesSeleccionadas.Items.Cast<string>().ToList(); ;
                 }
             }
             catch (Exception)
@@ -313,7 +320,7 @@ namespace Formularios
         /// <returns>True si es valida, false si no</returns>
         private bool ValidarFechaNacimiento()
         {
-            
+
             try
             {
                 int diaDeNacimiento = int.Parse(txbDiaNacimiento.Text);
@@ -323,14 +330,14 @@ namespace Formularios
                 DateTime prueba = new DateTime(añoDeNacimiento, mesDeNacimiento, diaDeNacimiento);
                 return true;
             }
-            catch(ArgumentOutOfRangeException ex)
+            catch (ArgumentOutOfRangeException ex)
             {
                 MessageBox.Show("Fecha de nacimiento invalida! Intente nuevamente");
                 errorProvider.SetError(gpbFechaNacimiento, "Fecha de nacimiento invalida");
             }
             catch (Exception)
             {
-                MessageBox.Show("Ocurrio un error al validar la fecha de nacimiento");                
+                MessageBox.Show("Ocurrio un error al validar la fecha de nacimiento");
             }
 
             return false;
@@ -473,7 +480,11 @@ namespace Formularios
             }
         }
 
-
+        /// <summary>
+        /// Elimina la especialidad seleccionada de la lista de especialidades seleccionadas.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ltbEspecialidadesSeleccionadas_DoubleClick(object sender, EventArgs e)
         {
             string entrada = ltbEspecialidadesSeleccionadas.SelectedItem.ToString();
@@ -486,6 +497,11 @@ namespace Formularios
             }
         }
 
+        /// <summary>
+        /// Abre un nuevo formulario para seleccionar los horarios del profesional.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSeleccionarHorarios_Click(object sender, EventArgs e)
         {
             FrmSeleccionarHorariosAtencion seleccionarHorarios = new FrmSeleccionarHorariosAtencion(profesional);

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP4\\Leonel.Ledesma.2E.TP4\\TestCentroMedico\\TestCentroMedico.csproj": {}
+    "C:\\Users\\Leonel\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP4\\Leonel.Ledesma.2E.TP4\\TestCentroMedico\\TestCentroMedico.csproj": {}
   },
   "projects": {
-    "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP4\\Leonel.Ledesma.2E.TP4\\Entidades\\Entidades.csproj": {
+    "C:\\Users\\Leonel\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP4\\Leonel.Ledesma.2E.TP4\\Entidades\\Entidades.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP4\\Leonel.Ledesma.2E.TP4\\Entidades\\Entidades.csproj",
+        "projectUniqueName": "C:\\Users\\Leonel\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP4\\Leonel.Ledesma.2E.TP4\\Entidades\\Entidades.csproj",
         "projectName": "Entidades",
-        "projectPath": "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP4\\Leonel.Ledesma.2E.TP4\\Entidades\\Entidades.csproj",
-        "packagesPath": "C:\\Users\\leone\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP4\\Leonel.Ledesma.2E.TP4\\Entidades\\obj\\",
+        "projectPath": "C:\\Users\\Leonel\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP4\\Leonel.Ledesma.2E.TP4\\Entidades\\Entidades.csproj",
+        "packagesPath": "C:\\Users\\Leonel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Leonel\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP4\\Leonel.Ledesma.2E.TP4\\Entidades\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\leone\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Leonel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -60,21 +60,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP4\\Leonel.Ledesma.2E.TP4\\TestCentroMedico\\TestCentroMedico.csproj": {
+    "C:\\Users\\Leonel\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP4\\Leonel.Ledesma.2E.TP4\\TestCentroMedico\\TestCentroMedico.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP4\\Leonel.Ledesma.2E.TP4\\TestCentroMedico\\TestCentroMedico.csproj",
+        "projectUniqueName": "C:\\Users\\Leonel\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP4\\Leonel.Ledesma.2E.TP4\\TestCentroMedico\\TestCentroMedico.csproj",
         "projectName": "TestCentroMedico",
-        "projectPath": "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP4\\Leonel.Ledesma.2E.TP4\\TestCentroMedico\\TestCentroMedico.csproj",
-        "packagesPath": "C:\\Users\\leone\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP4\\Leonel.Ledesma.2E.TP4\\TestCentroMedico\\obj\\",
+        "projectPath": "C:\\Users\\Leonel\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP4\\Leonel.Ledesma.2E.TP4\\TestCentroMedico\\TestCentroMedico.csproj",
+        "packagesPath": "C:\\Users\\Leonel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Leonel\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP4\\Leonel.Ledesma.2E.TP4\\TestCentroMedico\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\leone\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Leonel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -88,8 +88,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP4\\Leonel.Ledesma.2E.TP4\\Entidades\\Entidades.csproj": {
-                "projectPath": "C:\\Users\\leone\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP4\\Leonel.Ledesma.2E.TP4\\Entidades\\Entidades.csproj"
+              "C:\\Users\\Leonel\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP4\\Leonel.Ledesma.2E.TP4\\Entidades\\Entidades.csproj": {
+                "projectPath": "C:\\Users\\Leonel\\OneDrive\\Escritorio\\UTN Programacion\\Segundo Cuatri\\Programacion II\\tps_laboratorio_ii\\TP4\\Leonel.Ledesma.2E.TP4\\Entidades\\Entidades.csproj"
               }
             }
           }
@@ -136,7 +136,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

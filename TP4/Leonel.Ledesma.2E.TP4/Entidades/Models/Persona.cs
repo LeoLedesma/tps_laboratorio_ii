@@ -20,8 +20,8 @@ namespace Entidades
         private string apellido;
         private DateTime fechaDeNacimiento;
         private int edad;
-        public eNacionalidad nacionalidad;
-        public eGenero genero;
+        private eNacionalidad nacionalidad;
+        private eGenero genero;
         private string documento;
         private string telefono;
 
@@ -40,10 +40,10 @@ namespace Entidades
             this.Nombre = nombre;
             this.Apellido = apellido;
             this.FechaDeNacimiento = fechaDeNacimiento;
-            this.genero = sexo;
+            this.Genero = sexo;
             this.Documento = documento;
             this.Telefono = telefono;
-            this.nacionalidad = nacionalidad;
+            this.Nacionalidad = nacionalidad;
         }
 
         internal Persona(int id, string nombre, string apellido, DateTime fechaDeNacimiento, eGenero sexo, eNacionalidad nacionalidad, string documento, string telefono) : this(nombre, apellido, fechaDeNacimiento, sexo, nacionalidad, documento, telefono)
@@ -83,6 +83,8 @@ namespace Entidades
         public string Documento { get => documento; set => documento = value; }
         public string Telefono { get => telefono; set => telefono = value; }
         public int Id { get => id; set => id = value; }
+        public eGenero Genero { get => genero; set => genero = value; }
+        public eNacionalidad Nacionalidad { get => nacionalidad; set => nacionalidad = value; }
 
 
         //Sobrecarga de operadores

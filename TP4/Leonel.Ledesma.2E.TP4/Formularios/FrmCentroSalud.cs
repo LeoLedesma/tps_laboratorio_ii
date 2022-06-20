@@ -24,9 +24,16 @@ namespace Formularios
 
         private string pathAutoGuardado;
         private bool autoGuardado;
+        private bool guardarEnBaseDeDatos;
+        private bool guardadoLocal;
+        private bool origenDeDatosLocal;
+        private bool error = false;
 
         public string PathAutoGuardado { get => pathAutoGuardado; set => pathAutoGuardado = value; }
         public bool AutoGuardado { get => autoGuardado; set => autoGuardado = value; }
+        public bool GuardarEnBaseDeDatos { get => guardarEnBaseDeDatos; set => guardarEnBaseDeDatos = value; }
+        public bool GuardadoLocal { get => guardadoLocal; set => guardadoLocal = value; }
+        public bool OrigenDeDatosLocal { get => origenDeDatosLocal; set => origenDeDatosLocal = value; }
 
         /// <summary>
         /// Si no esta inicializada la instancia de la clase, la instancia, sino simplemente la retorna.
@@ -45,10 +52,10 @@ namespace Formularios
         /// </summary>
         private FrmCentroSalud()
         {
-            InitializeComponent();           
+            InitializeComponent();
 
             this.centroMedico = CentroMedico.Instanciar("Centro Medico");
-           
+
         }
 
         /// <summary>
@@ -109,12 +116,22 @@ namespace Formularios
         }
 
         /// <summary>
-        /// Actualiza la cantidad de personas en el menu principal.
+        /// Actualiza la cantidad de personas en el menu principal y si hay algun cambio de nombre.
         /// </summary>
-        public void ActualizarCantidadDePersonas()
+        public void ActualizarMenuPrincipal()
         {
-            this.lblCantidadPacientes.Text = $"Cantidad pacientes: {this.centroMedico.Pacientes.Count}";
-            this.lblCantidadProfesionales.Text = $"Cantidad profesionales: {this.centroMedico.Profesionales.Count}";
+            if (this.InvokeRequired)
+            {
+                Action action = ActualizarMenuPrincipal;
+                lblReloj.Invoke(action);
+            }
+            else
+            {
+                this.lblCantidadPacientes.Text = $"Cantidad pacientes: {this.centroMedico.Pacientes.Count}";
+                this.lblCantidadProfesionales.Text = $"Cantidad profesionales: {this.centroMedico.Profesionales.Count}";
+                this.lblNombre.Text = this.centroMedico.Nombre;
+            }
+
         }
 
         /// <summary>
@@ -157,14 +174,14 @@ namespace Formularios
         /// </summary>
         private void CerrarFormulariosAbiertos()
         {
-            
+
             foreach (Control control in this.pnlContenedor.Controls)
             {
                 if (control is FrmSecundario)
                 {
                     control.Dispose();
                     this.pnlContenedor.Controls.Remove(control);
-                }                
+                }
             }
         }
         /// <summary>
@@ -197,7 +214,7 @@ namespace Formularios
         /// <exception cref="Exception"></exception>
         private void GuardarConfiguracion()
         {
-            GestorDeArchivos.GuardarArchivo($"{Directory.GetCurrentDirectory()}.cds", $"{this.AutoGuardado},{this.PathAutoGuardado}");
+            GestorDeArchivos.GuardarArchivo($"{Directory.GetCurrentDirectory()}.cds", $"{this.AutoGuardado},{this.GuardadoLocal},{this.GuardarEnBaseDeDatos},{this.OrigenDeDatosLocal},{this.PathAutoGuardado}");
         }
 
         /// <summary>
@@ -213,20 +230,84 @@ namespace Formularios
                 {
                     string[] datos = lectura.Split(',', '\r');
                     this.AutoGuardado = bool.Parse(datos[0]);
-                    this.PathAutoGuardado = datos[1];
-
-                    if (this.AutoGuardado)
-                        this.centroMedico.ImportarCentroMedico(this.PathAutoGuardado);
-
+                    this.GuardadoLocal = bool.Parse(datos[1]);
+                    this.GuardarEnBaseDeDatos = bool.Parse(datos[2]);
+                    this.OrigenDeDatosLocal = bool.Parse(datos[3]);
+                    this.PathAutoGuardado = datos[4];
                 }
-            }
-            catch (DeserializarException ex)
-            {
-                MessageBox.Show(ex.Message);
             }
             catch (Exception)
             {
                 MessageBox.Show("Ocurrio un error al abrir el archivo de configuracion.");
+            }
+        }
+
+
+        /// <summary>
+        /// Recupera el centro medico segun la configuracion guardada en el archivo de configuracion.
+        /// </summary>
+        private void RecuperarCentroMedico()
+        {
+            if (this.AutoGuardado && this.origenDeDatosLocal && !string.IsNullOrEmpty(this.PathAutoGuardado))
+                this.centroMedico.ImportarCentroMedico(this.PathAutoGuardado);
+            else if (this.AutoGuardado && !this.origenDeDatosLocal)
+                this.RecuperarCentroMedicoSQL();
+        }
+
+        /// <summary>
+        /// Recupera el centro medico desde la base de datos.
+        /// </summary>
+        private void RecuperarCentroMedicoSQL()
+        {
+            GestorSQL.OnRecuperarException += this.RecuperarCentroMedicoException;
+            Task.Run(() => GestorSQL.RecuperarCentroMedico(centroMedico));
+
+        }
+
+        /// <summary>
+        /// Guarda el centro medico en la base de datos.
+        /// </summary>
+        /// <returns></returns>
+        private bool GuardarCentroMedicoSQL()
+        {
+            if (!error)
+            {
+                GestorSQL.OnGuardarException += this.RecuperarCentroMedicoException;
+                return GestorSQL.GuardarCentroMedico(centroMedico);
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Metodo que controla el evento de excepcion al momento de cargar el centro medico.
+        /// </summary>
+        private void RecuperarCentroMedicoException()
+        {
+            if (this.InvokeRequired)
+            {
+                Action delegado = RecuperarCentroMedicoException;
+                this.Invoke(delegado);
+            }
+            else
+            {
+                MessageBox.Show("Ocurrió un error al recuperar el centro medico.");
+                error = true;
+            }
+        }
+
+        /// <summary>
+        /// Metodo que controla el evento de exepcion al momento de guardar el centor medico.
+        /// </summary>
+        private void GuardarCentroMedicoException()
+        {
+            if (this.InvokeRequired)
+            {
+                Action delegado = GuardarCentroMedicoException;
+                this.Invoke(delegado);
+            }
+            else
+            {
+                MessageBox.Show("Ocurrió un error al guardar el centro medico.");
             }
         }
 
@@ -388,7 +469,7 @@ namespace Formularios
             try
             {
                 string fullPath = this.SeleccionarRutaGuardado();
-                if(!string.IsNullOrEmpty(fullPath))                
+                if (!string.IsNullOrEmpty(fullPath))
                     centroMedico.SerializarToJSON(fullPath);
             }
             catch (SerializarException ex)
@@ -480,7 +561,7 @@ namespace Formularios
         {
             try
             {
-                string fullPath = this.SeleccionarRutaArchivo();
+                string fullPath = this.SeleccionarRutaGuardado();
                 if (!string.IsNullOrEmpty(fullPath))
                 {
                     centroMedico.GuardarProfesionales(fullPath);
@@ -552,15 +633,17 @@ namespace Formularios
         {
             try
             {
-                if (this.AutoGuardado)                
+                if (this.AutoGuardado && this.GuardadoLocal)
                     this.centroMedico.GuardarCentroMedico(this.PathAutoGuardado);
                 
+                if (this.autoGuardado && this.GuardarEnBaseDeDatos)
+                    this.GuardarCentroMedicoSQL();
+
                 this.GuardarConfiguracion();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Ocurrió un error al cerrar el programa.");
-                GestorDeArchivos.EscribirErrorEnLog(ex.Message);
             }
         }
         #endregion
@@ -569,7 +652,7 @@ namespace Formularios
         {
             if (lblReloj.InvokeRequired)
             {
-                Action<Reloj> delegado = AsignarTiempo;                
+                Action<Reloj> delegado = AsignarTiempo;
                 lblReloj.Invoke(delegado, reloj);
             }
             else
@@ -579,6 +662,11 @@ namespace Formularios
             }
         }
 
+        /// <summary>
+        /// Carga el diseño
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmCentroSalud_Load(object sender, EventArgs e)
         {
             this.Text = centroMedico.Nombre;
@@ -586,32 +674,15 @@ namespace Formularios
             this.ActualizarNombre();
             this.InicializarFileDialogs();
             this.CargarConfiguracion();
-            this.centroMedico.OnCambioRealizado += this.ActualizarCantidadDePersonas;
+            this.RecuperarCentroMedico();
+            this.centroMedico.OnCambioRealizado += this.ActualizarMenuPrincipal;
+
 
             Reloj reloj = new Reloj();
             reloj.OnNotificarCambio += this.AsignarTiempo;
             reloj.Iniciar();
-
-            GestorSQL.RecuperarCentroMedico(centroMedico);
-            try
-            {
-                
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            
-
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-
-               MessageBox.Show( GestorSQL.GuardarCentroMedico(centroMedico));
-            
-        }
     }
 }
 

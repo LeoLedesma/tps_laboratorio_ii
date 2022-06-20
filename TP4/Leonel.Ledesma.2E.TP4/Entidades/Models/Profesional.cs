@@ -72,11 +72,12 @@ namespace Entidades
         {
             Profesional nuevaReferencia = new Profesional();
 
+            nuevaReferencia.Id = this.Id;
             nuevaReferencia.Nombre = this.Nombre;
             nuevaReferencia.Apellido = this.Apellido;
             nuevaReferencia.FechaDeNacimiento = this.FechaDeNacimiento;
-            nuevaReferencia.genero = this.genero;
-            nuevaReferencia.nacionalidad = this.nacionalidad;
+            nuevaReferencia.Genero = this.Genero;
+            nuevaReferencia.Nacionalidad = this.Nacionalidad;
             nuevaReferencia.Documento = this.Documento;
             nuevaReferencia.Telefono = this.Telefono;
             nuevaReferencia.Matricula = this.Matricula;

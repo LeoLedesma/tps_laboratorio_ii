@@ -1,25 +1,34 @@
-﻿using Entidades.Models;
+﻿using Entidades.Extension_Class;
+using Entidades.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
 using static Entidades.CentroMedico;
 using static Entidades.Persona;
 
 namespace Entidades
 {
+
+    public delegate void GuardarExceptionSQLHandler();
+    public delegate void RecuperarExceptionSQLHandler();
+
+    /// <summary>
+    /// Clase que administra las entidades de la base de datos
+    /// </summary>
     public class GestorSQL
     {
         private static string cadenaConexion;
         public static string querys;
+        public static event GuardarExceptionSQLHandler OnGuardarException;
+        public static event RecuperarExceptionSQLHandler OnRecuperarException;
 
         static GestorSQL()
-        {
-            GestorSQL.cadenaConexion = "Server=LEONEL-NOTEBOOK;Database=LedesmaLeonel2ETP4;Trusted_Connection=True;";
+        {            
+            GestorSQL.cadenaConexion = "Server=DESKTOP-S8IOILV;Database=LedesmaLeonel2ETP4;Trusted_Connection=True;";
         }
 
-        //----------------------Busqueda
+        //----------------------Busqueda--------------------------------
 
         /// <summary>
         /// Busca si el profesional ya contiene asociada la especialidad
@@ -39,27 +48,22 @@ namespace Entidades
                 connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
 
-                int i = 0;
 
                 while (reader.Read())
                 {
-                    i++;
+                    return true;
                 }
 
-                if (i == 0)
-                    return false;
-
-                else
-                    return true;
+                return false;
             }
 
         }
 
         /// <summary>
-        /// B
+        /// Busca el id del turno en la BDD
         /// </summary>
         /// <param name="idTurno"></param>
-        /// <returns></returns>
+        /// <returns>el id del turno, -1 si no lo encontró</returns>
         public static int BuscarIdTurno(Turno turno)
         {
             string query = "SELECT id FROM turnos WHERE idProfesional = @idProfesional and idPaciente = @idPaciente and fecha = @fecha and idEspecialidad = @idEspecialidad";
@@ -74,7 +78,6 @@ namespace Entidades
                 connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 Paciente paciente = null;
-                int i = 0;
 
                 while (reader.Read())
                 {
@@ -85,9 +88,13 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Busca el id del profesional por documento.
+        /// </summary>
+        /// <param name="documento"></param>
+        /// <returns>el id del turno, -1 si no lo encontró</returns>
         public static int BuscarIdProfesional(string documento)
         {
-
             string query = "SELECT id FROM profesionales WHERE documento = @documento";
 
             using (SqlConnection connection = new SqlConnection(GestorSQL.cadenaConexion))
@@ -108,6 +115,11 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Busca el id del paciente por documento.
+        /// </summary>
+        /// <param name="documento"></param>
+        /// <returns>El id del turno, -1 si no lo encontró</returns>
         public static int BuscarIdPaciente(string documento)
         {
 
@@ -130,10 +142,14 @@ namespace Entidades
             }
         }
 
-
+        /// <summary>
+        /// Busca el idDiasDeAtencion del profesional por documento.
+        /// </summary>
+        /// <param name="documento"></param>
+        /// <returns>El idDiasDeAtencion del profesional o -1 si no lo encontro</returns>
         public static int BuscarIdDiasDeAtencion(string documento)
         {
-            string query = "SELECT id FROM diasDeAtencion WHERE documentoProfesional = @documento";
+            string query = "SELECT idDiasDeAtencion FROM profesionales WHERE documento = @documento";
 
             using (SqlConnection connection = new SqlConnection(GestorSQL.cadenaConexion))
             {
@@ -142,11 +158,21 @@ namespace Entidades
                 connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
 
-                reader.Read();
-                return reader.GetInt32(0);
+
+                while (reader.Read())
+                {
+                    return reader.GetInt32(0);
+                }
+
+                return -1;
             }
         }
 
+        /// <summary>
+        /// Busca el id de la especialidad dentro de especialidadesCentro por nombre.
+        /// </summary>
+        /// <param name="especialidad"></param>
+        /// <returns>El id de la especialidad o -1 si no lo encontro</returns>
         public static int BuscarIdEspecialidad(string especialidad)
         {
             string query = "SELECT ID FROM especialidadesCentro WHERE nombre = @especialidad";
@@ -167,6 +193,12 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Busca el idEspecialidad del profesional por idProfesional y especialidad en especialidadesProfesionales.
+        /// </summary>
+        /// <param name="idProfesional"></param>
+        /// <param name="especialidad"></param>
+        /// <returns>El id de la especialidad o -1 si no lo encontro</returns>
         public static int BuscarIdEspecialidadProfesional(int idProfesional, string especialidad)
         {
             string query = "SELECT id FROM especialidadesProfesionales WHERE idProfesional = @idProfesional and idEspecialidadesCentro = @idEspecialidad";
@@ -205,20 +237,44 @@ namespace Entidades
                 connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 Paciente paciente = null;
-                int i = 0;
+
                 while (reader.Read())
                 {
-                    i++;
+                    return true;
                 }
 
-                if (i == 0)
-                    return false;
-
-                else
-                    return true;
+                return false;
             }
         }
 
+        /// <summary>
+        /// Busca el idDiasDeAtencion del centromedico
+        /// </summary>
+        /// <returns>El id o -1 si no lo encontro</returns>
+        public static int BuscarIdDiasDeAtencionCentro()
+        {
+            string query = "SELECT idDiasDeAtencion from centroMedico";
+
+            using (SqlConnection connection = new SqlConnection(GestorSQL.cadenaConexion))
+            {
+                SqlCommand cmd = new SqlCommand(query, connection);
+                connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                Paciente paciente = null;
+
+                while (reader.Read())
+                {
+                    return reader.GetInt32(0);
+                }
+                return -1;
+            }
+        }
+
+        /// <summary>
+        /// Busca si existe el profesional por documento
+        /// </summary>
+        /// <param name="documento"></param>
+        /// <returns>true si existe, false si no</returns>
         public static bool BuscarProfesional(string documento)
         {
             string query = "SELECT id FROM profesionales WHERE documento = @documento";
@@ -234,17 +290,17 @@ namespace Entidades
 
                 while (reader.Read())
                 {
-                    i++;
+                    return true;
                 }
 
-                if (i == 0)
-                    return false;
-
-                else
-                    return true;
+                return false;
             }
         }
 
+        /// <summary>
+        /// Comprueba si el centro medico ya está cargado.
+        /// </summary>
+        /// <returns>True si ya esta cargado, false si no</returns>
         public static bool BuscarCentroMedico()
         {
             string query = "SELECT * FROM centroMedico";
@@ -259,14 +315,11 @@ namespace Entidades
 
                 while (reader.Read())
                 {
-                    i++;
+                    return true;
                 }
 
-                if (i == 0)
-                    return false;
+                return false;
 
-                else
-                    return true;
             }
 
         }
@@ -274,39 +327,67 @@ namespace Entidades
 
         //-----------------------Guardar----------------------------
 
-        public static string GuardarCentroMedico(CentroMedico centroMedico)
+        /// <summary>
+        /// Guarda todas los campos del centro medico, actualizandolo o creando uno nuevo si no existiese.
+        /// </summary>
+        /// <param name="centroMedico"></param>
+        /// <returns>True si logro guardar el centro medico</returns>
+        public static bool GuardarCentroMedico(CentroMedico centroMedico)
         {
-            string query;
-            if (BuscarCentroMedico())
+            try
             {
-                query = "UPDATE centroMedico set nombre = @nombre, duracionTurno = @duracionTurno, idDiasDeAtencion=@idDiasDeAtencion WHERE id = @id";
-            }else
+                string query;
+                bool esActualizacion = false;
+                if (BuscarCentroMedico())
+                {
+                    query = "UPDATE centroMedico set nombre = @nombre, duracionTurno = @duracionTurno WHERE id = @id";
+                    esActualizacion = true;
+                }
+                else
+                {
+                    query = "INSERT INTO centroMedico (nombre, duracionTurno, idDiasDeAtencion) VALUES (@nombre, @duracionTurno, @idDiasDeAtencion)";
+                }
+
+
+                using (SqlConnection connection = new SqlConnection(GestorSQL.cadenaConexion))
+                {
+                    SqlCommand cmd = new SqlCommand(query, connection);
+                    cmd.Parameters.AddWithValue("@id", 1);
+                    cmd.Parameters.AddWithValue("@nombre", centroMedico.Nombre);
+                    cmd.Parameters.AddWithValue("@duracionTurno", (int)centroMedico.DuracionDeTurnos);
+                    if (esActualizacion)
+                    {
+                        GestorSQL.ActualizarDiasDeAtencion(centroMedico.DiasDeAtencion, GestorSQL.BuscarIdDiasDeAtencionCentro());
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@idDiasDeAtencion", GestorSQL.GuardarDiasDeAtencion(centroMedico.DiasDeAtencion));
+                    }
+                    connection.Open();
+
+                    cmd.ExecuteNonQuery();
+
+                    GestorSQL.ActualizarEspecialidadesCentro(centroMedico.ListaEspecialidades);
+                    GestorSQL.ActualizarProfesionales(centroMedico.Profesionales);
+                    GestorSQL.ActualizarPacientes(centroMedico.Pacientes);
+                    GestorSQL.ActualizarTurnos(centroMedico.Turnos);
+
+                }
+            }catch(Exception)
             {
-                query = "INSERT INTO centroMedico (nombre, duracionTurno, idDiasDeAtencion) VALUES (@nombre, @duracionTurno, @idDiasDeAtencion)";
+                GestorSQL.OnGuardarException?.Invoke();
+                return false;
             }
 
-            int pacientes;
-            int profesionales;
-            int turnos;
-            using (SqlConnection connection = new SqlConnection(GestorSQL.cadenaConexion))
-            {
-                SqlCommand cmd = new SqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@id", 1);
-                cmd.Parameters.AddWithValue("@nombre", centroMedico.Nombre);
-                cmd.Parameters.AddWithValue("@duracionTurno", (int)centroMedico.DuracionDeTurnos);
-                cmd.Parameters.AddWithValue("@idDiasDeAtencion", GestorSQL.GuardarDiasDeAtencion(centroMedico.DiasDeAtencion));
-                connection.Open();
-                cmd.ExecuteNonQuery();
-
-                ActualizarEspecialidadesCentro(centroMedico.ListaEspecialidades);
-                profesionales = GestorSQL.GuardarProfesionales(centroMedico.Profesionales);
-                pacientes = GestorSQL.GuardarPacientes(centroMedico.Pacientes);
-                turnos = GestorSQL.GuardarTurnos(centroMedico.Turnos);
-            }
-            return $"{profesionales} profesionales cargados, {pacientes} pacientes cargados, {turnos} cargados";
+            return true;
 
         }
 
+        /// <summary>
+        /// Guarda la lista de turnos.
+        /// </summary>
+        /// <param name="turnos"></param>
+        /// <returns>La cantidad de turnos que guardó</returns>
         public static int GuardarTurnos(List<Turno> turnos)
         {
             int contador = 0;
@@ -320,6 +401,11 @@ namespace Entidades
 
         }
 
+        /// <summary>
+        /// Guarda un turno
+        /// </summary>
+        /// <param name="turno"></param>
+        /// <returns>True si lo guardo, false si ya existia</returns>
         public static bool GuardarTurno(Turno turno)
         {
             string query = "INSERT INTO turnos (idPaciente, idProfesional, idEspecialidad, fecha, pacienteAsistio) VALUES (@idPaciente, @idProfesional, @idEspecialidad, @fecha, @pacienteAsistio)";
@@ -337,6 +423,7 @@ namespace Entidades
                     cmd.Parameters.AddWithValue("@pacienteAsistio", turno.PacienteAsistio);
 
                     connection.Open();
+
                     cmd.ExecuteNonQuery();
                     return true;
                 }
@@ -346,6 +433,10 @@ namespace Entidades
 
         }
 
+        /// <summary>
+        /// Guarda la lista de especialidades del centro medico, creandolas o actualizandolas.
+        /// </summary>
+        /// <param name="especialidades"></param>
         public static void GuardarEspecialidadesCentro(List<string> especialidades)
         {
             foreach (string especialidad in especialidades)
@@ -360,6 +451,20 @@ namespace Entidades
                         cmd.Parameters.AddWithValue("@nombre", especialidad);
                         cmd.Parameters.AddWithValue("@isActive", 1);
                         connection.Open();
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                else
+                {
+                    string query = "UPDATE especialidadesCentro set nombre = @nombre, isActive = @isActive where nombre = @nombre";
+                    using (SqlConnection connection = new SqlConnection(GestorSQL.cadenaConexion))
+                    {
+                        SqlCommand cmd = new SqlCommand(query, connection);
+                        cmd.Parameters.AddWithValue("@nombre", especialidad);
+                        cmd.Parameters.AddWithValue("@isActive", 1);
+                        connection.Open();
+
                         cmd.ExecuteNonQuery();
                     }
                 }
@@ -367,6 +472,11 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Guarda la lista de especialidades de un profesional, creandolas o actualizandolas.
+        /// </summary>
+        /// <param name="idProfesional"></param>
+        /// <param name="especialidades"></param>
         public static void GuardarEspecialidadesProfesional(int idProfesional, List<string> especialidades)
         {
             foreach (string especialidad in especialidades)
@@ -382,12 +492,33 @@ namespace Entidades
                         cmd.Parameters.AddWithValue("@idEspecialidad", GestorSQL.BuscarIdEspecialidad(especialidad));
                         cmd.Parameters.AddWithValue("@isActive", 1);
                         connection.Open();
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                else
+                {
+                    string query = "UPDATE especialidadesProfesionales set idProfesional = @idProfesional, idEspecialidadesCentro = @idEspecialidad, isActive = @isActive " +
+                        "where idProfesional = @idProfesional and idEspecialidadesCentro = @idEspecialidad";
+                    using (SqlConnection connection = new SqlConnection(GestorSQL.cadenaConexion))
+                    {
+                        SqlCommand cmd = new SqlCommand(query, connection);
+                        cmd.Parameters.AddWithValue("@idProfesional", idProfesional);
+                        cmd.Parameters.AddWithValue("@idEspecialidad", GestorSQL.BuscarIdEspecialidad(especialidad));
+                        cmd.Parameters.AddWithValue("@isActive", 1);
+                        connection.Open();
+
                         cmd.ExecuteNonQuery();
                     }
                 }
             }
         }
 
+        /// <summary>
+        /// Guarda una instancia de HorarioDeAtencion.
+        /// </summary>
+        /// <param name="horario"></param>
+        /// <returns>Retorna el id de la instancia que guardo.</returns>
         public static int GuardarHorariosAtencion(HorarioDeAtencion horario)
         {
             string query = "INSERT INTO horarioDeAtencion (atiende, esPorDefecto, desde, hasta) " +
@@ -403,6 +534,7 @@ namespace Entidades
                 cmd.Parameters.AddWithValue("@desde", horario.Desde);
                 cmd.Parameters.AddWithValue("@hasta", horario.Hasta);
                 connection.Open();
+
                 cmd.ExecuteNonQuery();
 
                 cmd.CommandText = "SELECT MAX(id) FROM horarioDeAtencion";
@@ -411,10 +543,10 @@ namespace Entidades
         }
 
         /// <summary>
-        /// Guarda los datos del centro medico en la base de datos.
+        /// Guarda una instancia de DiasDeAtencion.
         /// </summary>
         /// <param name="diasAtencion"></param>
-        /// <returns></returns>
+        /// <returns>Retorna el id de la instancia guardada.</returns>
         public static int GuardarDiasDeAtencion(DiasDeAtencion diasAtencion)
         {
             string query = "INSERT INTO diasDeAtencion(idLunes, idMartes, idMiercoles, idJueves, idViernes, idSabado, idDomingo) " +
@@ -431,6 +563,7 @@ namespace Entidades
                 cmd.Parameters.AddWithValue("@domingo", GestorSQL.GuardarHorariosAtencion(diasAtencion.Domingo));
 
                 connection.Open();
+
                 cmd.ExecuteNonQuery();
 
                 cmd.CommandText = "SELECT MAX(id) FROM diasDeAtencion";
@@ -439,40 +572,10 @@ namespace Entidades
         }
 
         /// <summary>
-        /// Guarda los dias de atencion del profesional con su documento.
+        /// Guarda una instancia de profesional o si ya existe lo actualiza.
         /// </summary>
-        /// <param name="diasAtencion"></param>
-        /// <param name="documento"></param>
-        /// <returns></returns>
-        public static int GuardarDiasDeAtencion(DiasDeAtencion diasAtencion, string documento)
-        {
-            string query = "INSERT INTO diasDeAtencion(idLunes, idMartes, idMiercoles, idJueves, idViernes, idSabado, idDomingo) " +
-               "VALUES (@lunes, @martes, @miercoles, @jueves, @viernes, @sabado, @domingo)";
-            using (SqlConnection connection = new SqlConnection(GestorSQL.cadenaConexion))
-            {
-                SqlCommand cmd = new SqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@lunes", GestorSQL.GuardarHorariosAtencion(diasAtencion.Lunes));
-                cmd.Parameters.AddWithValue("@martes", GestorSQL.GuardarHorariosAtencion(diasAtencion.Martes));
-                cmd.Parameters.AddWithValue("@miercoles", GestorSQL.GuardarHorariosAtencion(diasAtencion.Miercoles));
-                cmd.Parameters.AddWithValue("@jueves", GestorSQL.GuardarHorariosAtencion(diasAtencion.Jueves));
-                cmd.Parameters.AddWithValue("@viernes", GestorSQL.GuardarHorariosAtencion(diasAtencion.Viernes));
-                cmd.Parameters.AddWithValue("@sabado", GestorSQL.GuardarHorariosAtencion(diasAtencion.Sabado));
-                cmd.Parameters.AddWithValue("@domingo", GestorSQL.GuardarHorariosAtencion(diasAtencion.Domingo));
-
-                connection.Open();
-                cmd.ExecuteNonQuery();
-
-                cmd.CommandText = "SELECT MAX(id) FROM diasDeAtencion";
-                return (int)cmd.ExecuteScalar();
-            }
-        }
-
-        /// <summary>
-        /// Guarda un profesional
-        /// </summary>
-        /// <param name="profesional"></param>
-        /// <returns>true </returns>
-        public static bool GuardarProfesional(Profesional profesional)
+        /// <param name="profesional"></param>        
+        public static void GuardarProfesional(Profesional profesional)
         {
             string query = "INSERT INTO profesionales (nombre, apellido, fechaNacimiento, indiceGenero, indiceNacionalidad, documento, telefono, matricula, idDiasDeAtencion, isActive) " +
                 "VALUES (@nombre, @apellido, @fechaNacimiento, @genero, @nacionalidad, @documento, @telefono, @matricula, @idDiasDeAtencion, @isActive)";
@@ -484,83 +587,95 @@ namespace Entidades
                     cmd.Parameters.AddWithValue("@nombre", profesional.Nombre);
                     cmd.Parameters.AddWithValue("@apellido", profesional.Apellido);
                     cmd.Parameters.AddWithValue("@fechaNacimiento", profesional.FechaDeNacimiento);
-                    cmd.Parameters.AddWithValue("@genero", (int)profesional.genero);
-                    cmd.Parameters.AddWithValue("@nacionalidad", (int)profesional.nacionalidad);
+                    cmd.Parameters.AddWithValue("@genero", (int)profesional.Genero);
+                    cmd.Parameters.AddWithValue("@nacionalidad", (int)profesional.Nacionalidad);
                     cmd.Parameters.AddWithValue("@documento", profesional.Documento);
                     cmd.Parameters.AddWithValue("@telefono", profesional.Telefono);
                     cmd.Parameters.AddWithValue("@matricula", profesional.Matricula);
-                    cmd.Parameters.AddWithValue("@idDiasDeAtencion", GestorSQL.GuardarDiasDeAtencion(profesional.DiasDeAtencion, profesional.Documento));
-                    cmd.Parameters.AddWithValue("@isActive", 1);                    
+                    cmd.Parameters.AddWithValue("@idDiasDeAtencion", GestorSQL.GuardarDiasDeAtencion(profesional.DiasDeAtencion));
+                    cmd.Parameters.AddWithValue("@isActive", 1);
                     connection.Open();
                     cmd.ExecuteNonQuery();
                     GestorSQL.GuardarEspecialidadesProfesional(BuscarIdProfesional(profesional.Documento), profesional.Especialidades);
-
                 }
-                return true;
+
             }
 
-            return false;
+            GestorSQL.ActualizarProfesional(profesional);
         }
 
-        public static int GuardarProfesionales(List<Profesional> profesionales)
+        /// <summary>
+        /// Guarda o actualiza una lista de profesionales.
+        /// </summary>
+        /// <param name="profesionales"></param>
+        public static void GuardarProfesionales(List<Profesional> profesionales)
         {
-            int i = 0;
+
             foreach (Profesional profesional in profesionales)
             {
-
-                if (GestorSQL.GuardarProfesional(profesional))
-                {
-                    i++;
-                }
-
+                GestorSQL.GuardarProfesional(profesional);
             }
-
-            return i;
         }
 
-        public static int GuardarPacientes(List<Paciente> pacientes)
+        /// <summary>
+        /// guarda o actualiza una lista de pacientes.
+        /// </summary>
+        /// <param name="pacientes"></param>
+        public static void GuardarPacientes(List<Paciente> pacientes)
         {
-            int i = 0;
+
             foreach (Paciente paciente in pacientes)
             {
-                if (!BuscarPaciente(paciente.Documento))
-                {
-                    GestorSQL.GuardarPaciente(paciente);
-                    i++;
-                }
+                GestorSQL.GuardarPaciente(paciente);
             }
 
-            return i;
         }
 
-        public static bool GuardarPaciente(Paciente paciente)
+        /// <summary>
+        /// Guarda o actualiza una instancia de paciente.
+        /// </summary>
+        /// <param name="paciente"></param>        
+        public static void GuardarPaciente(Paciente paciente)
         {
-            string query = "INSERT INTO pacientes (nombre, apellido, fechaNacimiento, indiceGenero, indiceNacionalidad, documento, telefono, telefonoContacto, obraSocial, numeroAfiliado, isActive) " +
+
+            if (!BuscarPaciente(paciente.Documento))
+            {
+                string query = "INSERT INTO pacientes (nombre, apellido, fechaNacimiento, indiceGenero, indiceNacionalidad, documento, telefono, telefonoContacto, obraSocial, numeroAfiliado, isActive) " +
                 "VALUES (@nombre, @apellido, @fechaNacimiento, @genero, @nacionalidad, @documento, @telefono, @telefonoContacto, @obraSocial, @numeroAfiliado, @isActive)";
 
-            using (SqlConnection connection = new SqlConnection(GestorSQL.cadenaConexion))
-            {
-                SqlCommand cmd = new SqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@nombre", paciente.Nombre);
-                cmd.Parameters.AddWithValue("@apellido", paciente.Apellido);
-                cmd.Parameters.AddWithValue("@fechaNacimiento", paciente.FechaDeNacimiento);
-                cmd.Parameters.AddWithValue("@genero", (int)paciente.genero);
-                cmd.Parameters.AddWithValue("@nacionalidad", (int)paciente.nacionalidad);
-                cmd.Parameters.AddWithValue("@documento", paciente.Documento);
-                cmd.Parameters.AddWithValue("@telefono", paciente.Telefono);
-                cmd.Parameters.AddWithValue("@telefonoContacto", paciente.TelefonoContacto);
-                cmd.Parameters.AddWithValue("@obraSocial", paciente.ObraSocial);
-                cmd.Parameters.AddWithValue("@numeroAfiliado", paciente.NumeroAfiliado);
-                cmd.Parameters.AddWithValue("@isActive", 1);
+                using (SqlConnection connection = new SqlConnection(GestorSQL.cadenaConexion))
+                {
+                    SqlCommand cmd = new SqlCommand(query, connection);
+                    cmd.Parameters.AddWithValue("@nombre", paciente.Nombre);
+                    cmd.Parameters.AddWithValue("@apellido", paciente.Apellido);
+                    cmd.Parameters.AddWithValue("@fechaNacimiento", paciente.FechaDeNacimiento);
+                    cmd.Parameters.AddWithValue("@genero", (int)paciente.Genero);
+                    cmd.Parameters.AddWithValue("@nacionalidad", (int)paciente.Nacionalidad);
+                    cmd.Parameters.AddWithValue("@documento", paciente.Documento);
+                    cmd.Parameters.AddWithValue("@telefono", paciente.Telefono);
+                    cmd.Parameters.AddWithValue("@telefonoContacto", paciente.TelefonoContacto);
+                    cmd.Parameters.AddWithValue("@obraSocial", paciente.ObraSocial);
+                    cmd.Parameters.AddWithValue("@numeroAfiliado", paciente.NumeroAfiliado);
+                    cmd.Parameters.AddWithValue("@isActive", true);
 
-                connection.Open();
-                cmd.ExecuteNonQuery();
+                    connection.Open();
+
+                    cmd.ExecuteNonQuery();
+                }
+
             }
-            return true;
+
+            GestorSQL.ActualizarPaciente(paciente);
+
         }
 
         //-----------------------Eliminar----------------------------
 
+        /// <summary>
+        /// Elimina de manera logica una instancia paciente cambiando isActive a 0.
+        /// </summary>
+        /// <param name="paciente"></param>
+        /// <returns>True si pudo eliminarlo, false si no</returns>
         public static bool EliminarPaciente(Paciente paciente)
         {
             string query = "UPDATE pacientes set isActive = 0 WHERE id = @id";
@@ -568,33 +683,70 @@ namespace Entidades
             using (SqlConnection connection = new SqlConnection(GestorSQL.cadenaConexion))
             {
                 SqlCommand cmd = new SqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@id", paciente.Id);
+                cmd.Parameters.AddWithValue("@id", BuscarIdPaciente(paciente.Documento));
 
                 connection.Open();
-                cmd.ExecuteNonQuery();
-                return true;
+                if (cmd.ExecuteNonQuery() == 1)
+                    return true;
+
+                return false;
             }
         }
 
-        public static bool EliminarEspecialidadProfesional(int idProfesional, int idEspecialidad)
+        /// <summary>
+        /// Elimina de manera logica una instancia profesional cambiando isActive a 0.
+        /// </summary>
+        /// <param name="profesional"></param>
+        /// <returns>True si pudo eliminarlo, false si no</returns>
+        public static bool EliminarProfesional(Profesional profesional)
         {
-            string query = " UPDATE especialidadesProfesional SET isActive = 0 WHERE idProfesional = @idProfesional, idEspecialidad = @idEspecialidad";
+            string query = "UPDATE profesionales set isActive = 0 WHERE id = @id";
+
+            using (SqlConnection connection = new SqlConnection(GestorSQL.cadenaConexion))
+            {
+                SqlCommand cmd = new SqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@id", BuscarIdProfesional(profesional.Documento));
+
+                connection.Open();
+                if (cmd.ExecuteNonQuery() == 1)
+                    return true;
+
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Elimina de manera logica una especialidad del profesional cambiando isActive a 0.
+        /// </summary>
+        /// <param name="idProfesional"></param>
+        /// <param name="especialidad"></param>
+        /// <returns>True si pudo eliminarla, false si no</returns>
+        public static bool EliminarEspecialidadProfesional(int idProfesional, string especialidad)
+        {
+            string query = " UPDATE especialidadesProfesionales SET isActive = 0 WHERE idProfesional = @idProfesional and idEspecialidadesCentro = @idEspecialidad";
 
             using (SqlConnection connection = new SqlConnection(GestorSQL.cadenaConexion))
             {
                 SqlCommand cmd = new SqlCommand(query, connection);
                 cmd.Parameters.AddWithValue("@idProfesional", idProfesional);
-                cmd.Parameters.AddWithValue("@idEspecialidad", idEspecialidad);
+                cmd.Parameters.AddWithValue("@idEspecialidad", BuscarIdEspecialidad(especialidad));
 
                 connection.Open();
-                cmd.ExecuteNonQuery();
-                return true;
+                if (cmd.ExecuteNonQuery() == 1)
+                    return true;
+
+                return false;
             }
         }
 
+        /// <summary>
+        /// Elimina de manera logica una especialidad del centro medico cambiando isActive a 0.
+        /// </summary>
+        /// <param name="idEspecialidad"></param>
+        /// <returns>True si pudo eliminarla, false si no</returns>
         public static bool EliminarEspecialidadCentro(int idEspecialidad)
         {
-            string query = " UPDATE especialidadesProfesionales SET isActive = 0 WHERE idEspecialidadesCentro = @idEspecialidad";
+            string query = " UPDATE especialidadesCentro SET isActive = 0 WHERE id = @idEspecialidad";
 
             using (SqlConnection connection = new SqlConnection(GestorSQL.cadenaConexion))
             {
@@ -602,48 +754,64 @@ namespace Entidades
                 cmd.Parameters.AddWithValue("@idEspecialidad", idEspecialidad);
 
                 connection.Open();
-                cmd.ExecuteNonQuery();
-                return true;
+                if (cmd.ExecuteNonQuery() == 1)
+                    return true;
+
+                return false;
             }
 
         }
 
-        public static bool EliminarTurno(int idTurno)
+        /// <summary>
+        /// Elimina un turno.
+        /// </summary>
+        /// <param name="turno"></param>
+        /// <returns>True si pudo eliminarla, false si no</returns>
+        public static bool EliminarTurno(Turno turno)
         {
-            string query = " UPDATE turnos SET isActive = 0 WHERE id = @id";
+            string query = "DELETE FROM turnos WHERE id = @id";
 
             using (SqlConnection connection = new SqlConnection(GestorSQL.cadenaConexion))
             {
                 SqlCommand cmd = new SqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@id", idTurno);
+                cmd.Parameters.AddWithValue("@id", BuscarIdTurno(turno));
 
                 connection.Open();
-                cmd.ExecuteNonQuery();
-                return true;
+                if (cmd.ExecuteNonQuery() == 1)
+                    return true;
+
+                return false;
             }
         }
 
         //-----------------------Actualizar--------------------------
+
+        /// <summary>
+        /// Actualiza un paciente con los campos recibidos.
+        /// </summary>
+        /// <param name="paciente"></param>
+        /// <returns>True si pudo actualizarlo, false si no.</returns>
         public static bool ActualizarPaciente(Paciente paciente)
         {
             string query = "UPDATE pacientes set nombre = @nombre, apellido = @apellido, fechaNacimiento = @fechaNacimiento, " +
                 "indiceGenero = @genero, indiceNacionalidad = @nacionalidad, documento = @documento, telefono = @telefono, " +
-                "telefonoContacto = @telefonoContacto, obraSocial = @obraSocial, numeroAfiliado = @numeroAfiliado WHERE id = @id";
+                "telefonoContacto = @telefonoContacto, obraSocial = @obraSocial, numeroAfiliado = @numeroAfiliado, isActive = @isActive WHERE id = @id";
 
             using (SqlConnection connection = new SqlConnection(GestorSQL.cadenaConexion))
             {
                 SqlCommand cmd = new SqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@id", paciente.Id);
+                cmd.Parameters.AddWithValue("@id", BuscarIdPaciente(paciente.Documento));
                 cmd.Parameters.AddWithValue("@nombre", paciente.Nombre);
                 cmd.Parameters.AddWithValue("@apellido", paciente.Apellido);
                 cmd.Parameters.AddWithValue("@fechaNacimiento", paciente.FechaDeNacimiento);
-                cmd.Parameters.AddWithValue("@genero", (int)paciente.genero);
-                cmd.Parameters.AddWithValue("@nacionalidad", (int)paciente.nacionalidad);
+                cmd.Parameters.AddWithValue("@genero", (int)paciente.Genero);
+                cmd.Parameters.AddWithValue("@nacionalidad", (int)paciente.Nacionalidad);
                 cmd.Parameters.AddWithValue("@documento", paciente.Documento);
                 cmd.Parameters.AddWithValue("@telefono", paciente.Telefono);
                 cmd.Parameters.AddWithValue("@telefonoContacto", paciente.TelefonoContacto);
                 cmd.Parameters.AddWithValue("@obraSocial", paciente.ObraSocial);
                 cmd.Parameters.AddWithValue("@numeroAfiliado", paciente.NumeroAfiliado);
+                cmd.Parameters.AddWithValue("@isActive", true);
 
                 connection.Open();
                 if (cmd.ExecuteNonQuery() == 1)
@@ -653,15 +821,19 @@ namespace Entidades
             }
         }
 
-        public static void ActualizarDiasDeAtencion(DiasDeAtencion diasDeAtencion, string documento)
+        /// <summary>
+        /// Actualiza los dias de atencion que correspondan al id.
+        /// </summary>
+        /// <param name="diasDeAtencion"></param>
+        /// <param name="id"></param>
+        public static void ActualizarDiasDeAtencion(DiasDeAtencion diasDeAtencion, int id)
         {
             string query = "SELECT idLunes, idMartes, idMiercoles, idJueves, idViernes, idSabado, idDomingo FROM diasDeAtencion WHERE id = @id";
-            int idDiasDeAtencion = BuscarIdDiasDeAtencion(documento);
 
             using (SqlConnection connection = new SqlConnection(GestorSQL.cadenaConexion))
             {
                 SqlCommand cmd = new SqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@id", idDiasDeAtencion);
+                cmd.Parameters.AddWithValue("@id", id);
                 connection.Open();
 
                 List<int> idsHorarioDeAtencion = new List<int>();
@@ -669,20 +841,29 @@ namespace Entidades
                 while (reader.Read())
                 {
                     idsHorarioDeAtencion.Add(reader.GetInt32(0));
+                    idsHorarioDeAtencion.Add(reader.GetInt32(1));
+                    idsHorarioDeAtencion.Add(reader.GetInt32(2));
+                    idsHorarioDeAtencion.Add(reader.GetInt32(3));
+                    idsHorarioDeAtencion.Add(reader.GetInt32(4));
+                    idsHorarioDeAtencion.Add(reader.GetInt32(5));
+                    idsHorarioDeAtencion.Add(reader.GetInt32(6));
                 }
 
-                int indice = 0;
+                int indice = 1;
                 foreach (int idHorarioDeAtencion in idsHorarioDeAtencion)
                 {
                     GestorSQL.ActualizarHorarioDeAtencion(idHorarioDeAtencion, diasDeAtencion[indice]);
                     indice++;
                 }
 
-
-
             }
         }
 
+        /// <summary>
+        /// Actualiza el HorarioDeAtencion que corresponda al id recibido.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="horarioDeAtencion"></param>
         public static void ActualizarHorarioDeAtencion(int id, HorarioDeAtencion horarioDeAtencion)
         {
             string query = "UPDATE horarioDeAtencion SET atiende = @atiende, esPorDefecto = @esPorDefecto, desde = @desde, hasta = @hasta WHERE id = @id";
@@ -690,6 +871,7 @@ namespace Entidades
             using (SqlConnection connection = new SqlConnection(GestorSQL.cadenaConexion))
             {
                 SqlCommand cmd = new SqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@id", id);
                 cmd.Parameters.AddWithValue("@atiende", horarioDeAtencion.Atiende);
                 cmd.Parameters.AddWithValue("@esPorDefecto", horarioDeAtencion.EsPorDefecto);
                 cmd.Parameters.AddWithValue("@desde", horarioDeAtencion.Desde);
@@ -700,7 +882,11 @@ namespace Entidades
             }
         }
 
-        public static bool ActualizarProfesional(Profesional profesional)
+        /// <summary>
+        /// Actualiza un profesional.
+        /// </summary>
+        /// <param name="profesional"></param>
+        public static void ActualizarProfesional(Profesional profesional)
         {
             string query = "UPDATE profesionales set nombre = @nombre, apellido = @apellido, fechaNacimiento = @fechaNacimiento, " +
                 "indiceGenero = @genero, indiceNacionalidad = @nacionalidad, documento = @documento, telefono = @telefono, " +
@@ -712,36 +898,90 @@ namespace Entidades
                 cmd.Parameters.AddWithValue("@nombre", profesional.Nombre);
                 cmd.Parameters.AddWithValue("@apellido", profesional.Apellido);
                 cmd.Parameters.AddWithValue("@fechaNacimiento", profesional.FechaDeNacimiento);
-                cmd.Parameters.AddWithValue("@genero", (int)profesional.genero);
-                cmd.Parameters.AddWithValue("@nacionalidad", (int)profesional.nacionalidad);
+                cmd.Parameters.AddWithValue("@genero", profesional.Genero);
+                cmd.Parameters.AddWithValue("@nacionalidad", (int)profesional.Nacionalidad);
                 cmd.Parameters.AddWithValue("@documento", profesional.Documento);
                 cmd.Parameters.AddWithValue("@telefono", profesional.Telefono);
                 cmd.Parameters.AddWithValue("@matricula", profesional.Matricula);
-                cmd.Parameters.AddWithValue("@idDiasDeAtencion", BuscarIdDiasDeAtencion(profesional.Documento));
-                GestorSQL.ActualizarEspecialidadesProfesional(profesional.Especialidades, profesional.Id);
+                int idDiasDeAtencion = BuscarIdDiasDeAtencion(profesional.Documento);
+                cmd.Parameters.AddWithValue("@idDiasDeAtencion", idDiasDeAtencion);
+                connection.Open();
+                cmd.ExecuteNonQuery();
+                GestorSQL.ActualizarEspecialidadesProfesional(profesional.Especialidades, profesional.Documento);
+                GestorSQL.ActualizarDiasDeAtencion(profesional.DiasDeAtencion, idDiasDeAtencion);
             }
-
-            return true;
         }
 
-        public static void ActualizarEspecialidadesProfesional(List<string> especialidades, int idProfesional)
+        /// <summary>
+        /// Actualiza las especialidades de un profesional segun su documento.
+        /// </summary>
+        /// <param name="especialidades"></param>
+        /// <param name="documento"></param>
+        public static void ActualizarEspecialidadesProfesional(List<string> especialidades, string documento)
         {
+            int idProfesional = BuscarIdProfesional(documento);
 
             List<string> especialidadesExistentes = RecuperarEspecialidadesProfesional(idProfesional);
-
             GestorSQL.GuardarEspecialidadesProfesional(idProfesional, especialidades.Except(especialidadesExistentes).ToList());
 
             foreach (string especialidad in especialidadesExistentes.Except(especialidades).ToList())
             {
-                GestorSQL.EliminarEspecialidadProfesional(idProfesional, BuscarIdEspecialidadProfesional(idProfesional, especialidad));
+                GestorSQL.EliminarEspecialidadProfesional(idProfesional, especialidad);
             }
-
         }
 
+        /// <summary>
+        /// Actualiza la lista de profesionales del centro medico.
+        /// </summary>
+        /// <param name="profesionales"></param>
+        public static void ActualizarProfesionales(List<Profesional> profesionales)
+        {
+            List<Profesional> profesionalesExistentes = RecuperarProfesionales();
+            GestorSQL.GuardarProfesionales(profesionales);
+
+            foreach (Profesional profesional in profesionalesExistentes.EliminarCoincidencias(profesionales))
+            {
+                GestorSQL.EliminarProfesional(profesional);
+            }
+        }
+
+        /// <summary>
+        /// Actualiza la lista de turnos del centro medico.
+        /// </summary>
+        /// <param name="turnos"></param>
+        public static void ActualizarTurnos(List<Turno> turnos)
+        {
+            List<Turno> turnosExistentes = RecuperarTurnos();
+            GestorSQL.GuardarTurnos(turnos.Except(turnosExistentes).ToList());
+
+            foreach (Turno turno in turnosExistentes.Except(turnos).ToList())
+            {
+                GestorSQL.EliminarTurno(turno);
+            }
+        }
+
+        /// <summary>
+        /// Actualiza la lista de pacientes del centro medico.
+        /// </summary>
+        /// <param name="pacientes"></param>
+        public static void ActualizarPacientes(List<Paciente> pacientes)
+        {
+            List<Paciente> pacientesExistentes = RecuperarPacientes();
+            GestorSQL.GuardarPacientes(pacientes);
+
+            foreach (Paciente paciente in pacientesExistentes.EliminarCoincidencias(pacientes))
+            {
+                GestorSQL.EliminarPaciente(paciente);
+            }
+        }
+
+        /// <summary>
+        /// Actualiza la lista de especialidades del centro medico.
+        /// </summary>
+        /// <param name="especialidades"></param>
         public static void ActualizarEspecialidadesCentro(List<string> especialidades)
         {
             List<string> especialidadesExistentes = RecuperarEspecialidadesCentro();
-
             GestorSQL.GuardarEspecialidadesCentro(especialidades.Except(especialidadesExistentes).ToList());
 
             foreach (string especialidad in especialidadesExistentes.Except(especialidades).ToList())
@@ -751,22 +991,13 @@ namespace Entidades
 
         }
 
-        public static bool ActualizarPersona(Persona persona)
-        {
-            if (persona is Paciente)
-            {
-                return GestorSQL.ActualizarPaciente((Paciente)persona);
-            }
-            else if (persona is Profesional)
-            {
-                return GestorSQL.ActualizarProfesional((Profesional)persona);
-            }
-
-            return false;
-        }
-
         //-----------------------Carga--------------------------
 
+        /// <summary>
+        /// Recupera de la base de datos un paciente por su id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Una instancia del paciente o null si no pudo.</returns>
         public static Paciente RecuperarPaciente(int id)
         {
             string query = "SELECT * FROM pacientes where id = @id";
@@ -799,6 +1030,10 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Recupera los pacientes del centro medico activos.
+        /// </summary>
+        /// <returns>Retorna la lista de pacientes que recupero.</returns>
         public static List<Paciente> RecuperarPacientes()
         {
             List<Paciente> pacientes = new List<Paciente>();
@@ -819,6 +1054,11 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Recupera todos los horarios de atencion segun el id del DiaDeAtencion
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Una instancia de DiaDeAtencion o null si no logró recuperarla.</returns>
         public static DiasDeAtencion RecuperarDiasDeAtencion(int id)
         {
             string query = "SELECT * FROM diasDeAtencion where id = @id";
@@ -858,6 +1098,11 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Recupera el horario de atencion segun su id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Una instancia de horario de atencion</returns>
         public static HorarioDeAtencion RecuperarHorarioDeAtencion(int id)
         {
             string query = "SELECT * FROM horarioDeAtencion where id = @id";
@@ -879,10 +1124,15 @@ namespace Entidades
                     return new HorarioDeAtencion(atiende, desde, hasta, esPorDefecto);
                 }
 
-                return null;
+                return new HorarioDeAtencion();
             }
         }
 
+        /// <summary>
+        /// Recupera un profesional segun su id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Una instancia de profesonal o null si no logro recuperarla</returns>
         public static Profesional RecuperarProfesional(int id)
         {
             string query = "SELECT * FROM profesionales where id = @id";
@@ -914,6 +1164,10 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Recupera la lista de profesionales activos del centro medico.
+        /// </summary>
+        /// <returns>La lista de pacientes que logro recuperar.</returns>
         public static List<Profesional> RecuperarProfesionales()
         {
             List<Profesional> pacientes = new List<Profesional>();
@@ -939,13 +1193,17 @@ namespace Entidades
                     List<string> especialidades = GestorSQL.RecuperarEspecialidadesProfesional(id);
 
                     pacientes.Add(new Profesional(id, nombre, apellido, fechaNacimiento, genero, nacionalidad, documento, telefono, matricula, especialidades));
-
                 }
 
                 return pacientes;
             }
         }
 
+        /// <summary>
+        /// Recupera las especialidades activas de un profesional segun su id.
+        /// </summary>
+        /// <param name="idProfesional"></param>
+        /// <returns>Lista de especialidades que logro recuperar.</returns>
         public static List<string> RecuperarEspecialidadesProfesional(int idProfesional)
         {
             List<string> especialidades = new List<string>();
@@ -968,6 +1226,10 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Recupera la lista de especialidades activas del centro medico.
+        /// </summary>
+        /// <returns></returns>
         public static List<string> RecuperarEspecialidadesCentro()
         {
             string query = "SELECT * FROM especialidadesCentro WHERE isActive = 1";
@@ -990,6 +1252,11 @@ namespace Entidades
 
         }
 
+        /// <summary>
+        /// Recupera una especialidad del centro medico segun su id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>La especialidad o null si no logro recuperarla.</returns>
         public static string RecuperarEspecialidad(int id)
         {
 
@@ -1005,10 +1272,14 @@ namespace Entidades
                 {
                     return reader.GetString(1);
                 }
-                return "";
+                return null;
             }
         }
 
+        /// <summary>
+        /// Recupera la lista de turnos del centro medico.
+        /// </summary>
+        /// <returns>La lista de turnos que logro recuperar.</returns>
         public static List<Turno> RecuperarTurnos()
         {
             string query = "SELECT * FROM TURNOS";
@@ -1032,34 +1303,42 @@ namespace Entidades
                 }
                 return turnos;
             }
-
-
         }
 
+        /// <summary>
+        /// Recupera todos los elementos del centro medico.
+        /// </summary>
+        /// <param name="centro"></param>
         public static void RecuperarCentroMedico(CentroMedico centro)
         {
-
-            centro.AgregarPersonas(RecuperarProfesionales());
-            centro.AgregarPersonas(RecuperarPacientes());
-            centro.ListaEspecialidades.AddRange(RecuperarEspecialidadesCentro());
-            centro.Turnos.AddRange(RecuperarTurnos());
-
-            string query = "SELECT * FROM centroMedico";
-
-            using (SqlConnection connection = new SqlConnection(GestorSQL.cadenaConexion))
+            try
             {
-                SqlCommand cmd = new SqlCommand(query, connection);
-                connection.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
+                centro.AgregarPersonas(RecuperarProfesionales());
+                centro.AgregarPersonas(RecuperarPacientes());
+                centro.ListaEspecialidades.AddRange(RecuperarEspecialidadesCentro());
+                centro.Turnos.AddRange(RecuperarTurnos());
 
-                while (reader.Read())
+                string query = "SELECT * FROM centroMedico";
+
+                using (SqlConnection connection = new SqlConnection(GestorSQL.cadenaConexion))
                 {
-                    centro.Nombre = reader.GetString(1);
-                    centro.DuracionDeTurnos = (EDuracionTurno)reader.GetInt32(2);
-                    centro.DiasDeAtencion = RecuperarDiasDeAtencion(reader.GetInt32(3));
-                }
-            }
+                    SqlCommand cmd = new SqlCommand(query, connection);
+                    connection.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
 
+                    while (reader.Read())
+                    {
+                        centro.Nombre = reader.GetString(1);
+                        centro.DuracionDeTurnos = (EDuracionTurno)reader.GetInt32(2);
+                        centro.DiasDeAtencion = RecuperarDiasDeAtencion(reader.GetInt32(3));
+                    }
+                }
+            }catch(Exception)
+            {
+                GestorSQL.OnRecuperarException?.Invoke();
+            }
+            
         }
+
     }
 }

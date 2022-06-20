@@ -24,9 +24,9 @@ namespace Entidades
         {
             try
             {
-                using (StreamWriter sw = new StreamWriter($"{Directory.GetCurrentDirectory()}\\Logs\\errores.log", true))
+                using (StreamWriter sw = new StreamWriter($"{Directory.GetCurrentDirectory()}\\errores.log", true))
                 {
-                    sw.WriteLine($"{DateTime.Now}: {mensaje}");
+                    sw.WriteLine($"{mensaje}");
                 }
                 return true;
             }

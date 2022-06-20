@@ -36,18 +36,27 @@ namespace Formularios
             this.CargarTurno(turno);
         }
 
+        /// <summary>
+        /// Carga el segundo paso con la lista de especialidades del centro.
+        /// </summary>
         private void CargarSegundoPasoEspecialidad()
         {
             lblSegundoPaso.Text = "Seleccione especialidad:";
             cmbSegundoPaso.DataSource = centroMedico.ListaEspecialidades;
         }
 
+        /// <summary>
+        /// Carga el segundo paso con la lista de profesionales.
+        /// </summary>
         private void CargarSegundoPasoProfesional()
         {
             lblSegundoPaso.Text = "Seleccione profesional:";
             cmbSegundoPaso.DataSource = centroMedico.Profesionales;
         }
 
+        /// <summary>
+        /// Carga el tercer paso con los profesionales que tienen la especialidad seleccionada.
+        /// </summary>
         private void CargarTercerPasoEspecialidad()
         {
             try
@@ -86,7 +95,10 @@ namespace Formularios
             this.CargarFechas();
         }
 
-
+        /// <summary>
+        /// Carga turno para su modificacion.
+        /// </summary>
+        /// <param name="turno"></param>
         public void CargarTurno(Turno turno)
         {
             cmbSeleccionarPor.SelectedIndex = 1;
@@ -210,6 +222,9 @@ namespace Formularios
             }
         }
 
+        /// <summary>
+        /// Modifica el turno con los nuevos datos.
+        /// </summary>
         private void ModificarTurno()
         {
             try
